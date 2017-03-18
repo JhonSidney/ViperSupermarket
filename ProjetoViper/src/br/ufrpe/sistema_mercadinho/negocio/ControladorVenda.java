@@ -21,6 +21,7 @@ public class ControladorVenda {
 			throw new ErroDeNegocioException("Venda Ja Existe !");
 		}
 	}
+	
 
 	public void atualizar(Venda venda) throws ErroDeNegocioException {
 		if (venda != null && this.existe(venda.getCodigoVenda())) {

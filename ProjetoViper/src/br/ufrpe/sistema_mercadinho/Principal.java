@@ -287,21 +287,20 @@ public static void listarDados(){
 		
 		listarDados();
 		
-		criarDados();// funcionando
+		criarDados();
 		
 		atualizarDados();
 		
-		listarDados();
+	//	listarDados();
 		
-		buscarDados();
-		
-		listarDados();
-		
-	//	removerDados();
+		//buscarDados();
 		
 		//listarDados();
 		
-
+		//removerDados();
+		
+	//	listarDados();
+		
 	}
 
 }

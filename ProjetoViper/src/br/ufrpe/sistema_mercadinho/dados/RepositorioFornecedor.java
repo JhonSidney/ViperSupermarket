@@ -96,7 +96,7 @@ public class RepositorioFornecedor implements IRepositorioFornecedor, Serializab
 		for (Fornecedor f : this.fornecedores) {
 			if (f.getCnpj().equals(fornecedor.getCnpj())) {
 				this.fornecedores.set(i, fornecedor);
-				System.out.println("atualizado!");
+				
 				salvarArquivo();
 				return true;
 			}

@@ -27,7 +27,7 @@ public class ControladorAdministrador {
 			throws ErroDeNegocioException {
 		if (adm != null && this.existe(adm.getCpf())) {
 			this.repositorioAdm.atualizar(adm);
-			System.out.println("atualizado!");
+			
 		} else {
 			throw new ErroDeNegocioException("Administrador não Existe !");
 		}

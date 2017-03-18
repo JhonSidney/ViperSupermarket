@@ -97,7 +97,7 @@ public class RepositorioCompra implements IRepositorioCompra, Serializable {
 	public boolean atualizar(Compra compra) {
 		int i = 0;
 		for (Compra c : this.compras) {
-			
+	
 			if (c.getCodigoPedido().equals(compra.getCodigoPedido())) {
 				this.compras.set(i, compra);
 				salvarArquivo();
