@@ -1,7 +1,5 @@
 package br.ufrpe.sistema_mercadinho;
 
-import java.util.Scanner;
-
 import br.ufrpe.sistema_mercadinho.exceptions.ErroDeNegocioException;
 import br.ufrpe.sistema_mercadinho.negocio.SistemaMercadinho;
 import br.ufrpe.sistema_mercadinho.negocio.beans.Administrador;
@@ -138,59 +136,171 @@ public static void atualizarDados(){
 		
 	}
 	
+
+public  static void buscarDados(){
+	
+	SistemaMercadinho fachada = SistemaMercadinho.getInstance();
+	try {
+		String cpf="123.456.789-81";
+		fachada.procurarAdministrador(cpf);
+		
+	} catch (ErroDeNegocioException e) {
+		System.out.println(e.getMessage());
+	}
+
+	try {
+		String codigoPedido="010169";
+		fachada.procurarCompra(codigoPedido);
+	} catch (ErroDeNegocioException e) {
+		System.out.println(e.getMessage());
+	}
+
+	try {
+	    String cnpj="08.471.877/0001-72";
+		fachada.procurarFornecedor(cnpj);
+		
+	} catch (ErroDeNegocioException e) {
+		System.out.println(e.getMessage());
+	}
+
+	try {
+		String cpf="096906474-82";
+		fachada.procurarFuncionario(cpf);
+	} catch (ErroDeNegocioException e) {
+		System.out.println(e.getMessage());
+	}
+
+	try {
+		String codigoProduto= "7898921403153";
+		fachada.procurarItem(codigoProduto);
+		
+	} catch (ErroDeNegocioException e) {
+		System.out.println(e.getMessage());
+	}
+	try {
+		String codigoVenda = "0034";
+		fachada.procurarVenda(codigoVenda);
+	} catch (ErroDeNegocioException e) {
+		System.out.println(e.getMessage());
+	}
+	
+}
+
+public static void removerDados(){
+	SistemaMercadinho fachada = SistemaMercadinho.getInstance();
+
+	Endereco enderecoAdm = new Endereco("rua da ufrpe", "centro", "54700-000", "33", null, "Recife",
+			"Pernambuco");
+	Administrador admin = new Administrador("9912-6471", "admin@gmail.com", enderecoAdm, "maria eduarda ",
+			"123.456.789-81", "1.234.321", "03/03/2016", "12/01/2017", "M", "solteiro", "brasilira", "Recife", "senha@123");
+	Endereco endereco = new Endereco("Rua da mangueira", "camela", "54500-000", "32", null, "ipojuca",
+			"Pernambuco");
+	Fornecedor fornecedor = new Fornecedor(" Mercadinho frigobox ", "Carretas do brasil s/a ", "08.471.877/0001-72", "02.232.3355-6",
+			endereco);
+
+	Item item = new Item("7898921403153", "nescafé sao bras", 100, "bebida", "mercearia", 7,7, 10);
+
+	Funcionario funcionario = new Funcionario("87604490", "joselma.sidney@gmail.com", endereco, "sidney josue",
+			"096906474-82", "8123456", "12/01/2010", "SDS", "M", "solteiro", "brasileiro", "recife", "12345678");
+
+	Compra compra = new Compra("010169", "2", "12/02/03", fornecedor, "cartao", 10, item);
+
+	Venda venda = new Venda("0034", funcionario, "12/08/2016", 15, 10, 0, 5, item);
+	
+	try {
+		//String cpf;
+		fachada.removerAdministrador(admin.getCpf());
+		
+	} catch (ErroDeNegocioException e) {
+		System.out.println(e.getMessage());
+	}
+
+	try {
+		//String codigoPedido;
+		fachada.removerCompras(compra.getCodigoPedido());
+
+	} catch (ErroDeNegocioException e) {
+		System.out.println(e.getMessage());
+	}
+
+	try {
+	//	String cnpj;
+		fachada.removerFornecedor(fornecedor.getCnpj());
+		
+	} catch (ErroDeNegocioException e) {
+		System.out.println(e.getMessage());
+	}
+
+	try {
+		//String cpf;
+		fachada.removerFuncionario(funcionario.getCpf());
+	} catch (ErroDeNegocioException e) {
+		System.out.println(e.getMessage());
+	}
+
+	try {
+		//String codigoProduto;
+		fachada.removerItem(item.getCodigoProduto());
+		
+	} catch (ErroDeNegocioException e) {
+		System.out.println(e.getMessage());
+	}
+	try {
+		//String codigoVenda;
+		fachada.removerVenda(venda.getCodigoVenda());
+	} catch (ErroDeNegocioException e) {
+		System.out.println(e.getMessage());
+	}
+
+	
+}
+	
+	
+public static void listarDados(){
+	SistemaMercadinho fachada = SistemaMercadinho.getInstance();
+	System.out.println("LISTANDO OS CADASTROS");
+	for (Administrador a : fachada.listarAdministrador()) {
+		System.out.println(a.toString());
+	}
+	for (Fornecedor a : fachada.listarFornecedor()) {
+		System.out.println(a.toString());
+	}
+
+	for (Compra a : fachada.listarCompras()) {
+		System.out.println(a.toString());
+	}
+	for (Item a : fachada.listarItem()) {
+		System.out.println(a.toString());
+	}
+
+	for (Venda a : fachada.listarVenda()) {
+		System.out.println(a.toString());
+	}
+
+	for (Funcionario a : fachada.listarFuncionario()) {
+		System.out.println(a.toString());
+	}
+}
+
 	public static void main(String[] args) {
 		criarDados();
-		SistemaMercadinho fachada = SistemaMercadinho.getInstance();
-
-		System.out.println("LISTANDO OS CADASTROS");
-		for (Administrador a : fachada.listarAdministrador()) {
-			System.out.println(a.toString());
-		}
-		for (Fornecedor a : fachada.listarFornecedor()) {
-			System.out.println(a.toString());
-		}
-
-		for (Compra a : fachada.listarCompras()) {
-			System.out.println(a.toString());
-		}
-		for (Item a : fachada.listarItem()) {
-			System.out.println(a.toString());
-		}
-
-		for (Venda a : fachada.listarVenda()) {
-			System.out.println(a.toString());
-		}
-
-		for (Funcionario a : fachada.listarFuncionario()) {
-			System.out.println(a.toString());
-		}
-
+		
+		listarDados();
+		
 		criarDados();// funcionando
 		
 		atualizarDados();
 		
-		System.out.println("LISTANDO OS CADASTROS");
-		for (Administrador a : fachada.listarAdministrador()) {
-			System.out.println(a.toString());
-		}
-		for (Fornecedor a : fachada.listarFornecedor()) {
-			System.out.println(a.toString());
-		}
-
-		for (Compra a : fachada.listarCompras()) {
-			System.out.println(a.toString());
-		}
-		for (Item a : fachada.listarItem()) {
-			System.out.println(a.toString());
-		}
-
-		for (Venda a : fachada.listarVenda()) {
-			System.out.println(a.toString());
-		}
-
-		for (Funcionario a : fachada.listarFuncionario()) {
-			System.out.println(a.toString());
-		}
+		listarDados();
+		
+		buscarDados();
+		
+		listarDados();
+		
+	//	removerDados();
+		
+		//listarDados();
+		
 
 	}
 

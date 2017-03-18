@@ -67,7 +67,7 @@ public class SistemaMercadinho {
 		this.compras.atualizar(compra);
 	}
 
-	public Compra procurarCompra(String codigoPedido) {
+	public Compra procurarCompra(String codigoPedido)throws ErroDeNegocioException {
 		return this.procurarCompra(codigoPedido);
 	}
 

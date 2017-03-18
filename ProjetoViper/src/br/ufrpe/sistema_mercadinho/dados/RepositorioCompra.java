@@ -110,13 +110,10 @@ public class RepositorioCompra implements IRepositorioCompra, Serializable {
 
 	@Override
 	public Compra procurar(String codigoPedido) {
-
 		for (Compra c : this.compras) {
-
 			if (c.getCodigoPedido().equals(codigoPedido)) {
 				return c;
 			}
-
 		}
 
 		return null;
