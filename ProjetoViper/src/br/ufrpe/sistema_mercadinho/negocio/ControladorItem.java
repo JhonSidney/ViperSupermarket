@@ -23,7 +23,7 @@ public class ControladorItem {
 	}
 
 	public void atualizar(Item item) throws ErroDeNegocioException {
-		if (item != null && !this.existe(item.getCodigoProduto())) {
+		if (item != null && this.existe(item.getCodigoProduto())) {
 			this.repositorioItem.atualizar(item);
 		} else {
 			throw new ErroDeNegocioException("Produto Não Existe !");

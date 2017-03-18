@@ -23,7 +23,7 @@ public class ControladorVenda {
 	}
 
 	public void atualizar(Venda venda) throws ErroDeNegocioException {
-		if (venda != null && !this.existe(venda.getCodigoVenda())) {
+		if (venda != null && this.existe(venda.getCodigoVenda())) {
 			this.repositorioVenda.atualizar(venda);
 		} else {
 			throw new ErroDeNegocioException("Venda Não Existe !");

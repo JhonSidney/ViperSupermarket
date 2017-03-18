@@ -24,7 +24,7 @@ public class ControladorFornecedor {
 	}
 
 	public void atualizar(Fornecedor fornecedor) throws ErroDeNegocioException {
-		if (fornecedor != null && !this.existe(fornecedor.getCnpj())) {
+		if (fornecedor != null && this.existe(fornecedor.getCnpj())) {
 			this.repositorioFornecedor.atualizar(fornecedor);
 		} else {
 			throw new ErroDeNegocioException("Fornecedor Não Existe !");
