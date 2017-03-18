@@ -97,12 +97,13 @@ public class RepositorioCompra implements IRepositorioCompra, Serializable {
 	public boolean atualizar(Compra compra) {
 		int i = 0;
 		for (Compra c : this.compras) {
-			i++;
+			
 			if (c.getCodigoPedido().equals(compra.getCodigoPedido())) {
-				this.compras.add(i, compra);
+				this.compras.set(i, compra);
 				salvarArquivo();
 				return true;
 			}
+			i++;
 		}
 		return false;
 	}
@@ -131,12 +132,13 @@ public class RepositorioCompra implements IRepositorioCompra, Serializable {
 
 		int i = 0;
 		for (Compra c : this.compras) {
-			i++;
+			
 			if (c.getCodigoPedido().equals(codigoPedido)) {
 				this.compras.remove(i);
 				salvarArquivo();
 				return true;
 			}
+			i++;
 
 		}
 

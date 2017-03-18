@@ -94,13 +94,13 @@ public class RepositorioFornecedor implements IRepositorioFornecedor, Serializab
 	public boolean atualizar(Fornecedor fornecedor) {
 		int i = 0;
 		for (Fornecedor f : this.fornecedores) {
-			i++;
 			if (f.getCnpj().equals(fornecedor.getCnpj())) {
-				this.fornecedores.add(i, fornecedor);
+				this.fornecedores.set(i, fornecedor);
+				System.out.println("atualizado!");
 				salvarArquivo();
 				return true;
 			}
-
+			i++;
 		}
 		return false;
 	}
@@ -126,12 +126,13 @@ public class RepositorioFornecedor implements IRepositorioFornecedor, Serializab
 
 		int i = 0;
 		for (Fornecedor f : this.fornecedores) {
-			i++;
+			
 			if (f.getCnpj().equals(cnpj)) {
 				this.fornecedores.remove(i);
 				salvarArquivo();
 				return true;
 			}
+			i++;
 		}
 
 		return false;

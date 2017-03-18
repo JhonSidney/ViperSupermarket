@@ -25,6 +25,7 @@ public class ControladorFuncionario {
 	public void atualizar(Funcionario funcionario) throws ErroDeNegocioException {
 		if (funcionario != null && this.existe(funcionario.getCpf())) {
 			this.repositorioFuncionario.atualizar(funcionario);
+			System.out.println("atualizado");
 		} else {
 			throw new ErroDeNegocioException("Funcionario Não Existe !");
 		}

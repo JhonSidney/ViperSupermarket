@@ -94,12 +94,13 @@ public class RepositorioVenda implements IRepositorioVenda, Serializable {
 	public boolean atualizar(Venda venda) {
 		int i = 0;
 		for (Venda v : this.vendas) {
-			i++;
+			
 			if (v.getCodigoVenda().equals(venda.getCodigoVenda())) {
-				this.vendas.add(i, venda);
+				this.vendas.set(i, venda);
 				salvarArquivo();
 				return true;
 			}
+			i++;
 		}
 		return false;
 	}
@@ -123,12 +124,13 @@ public class RepositorioVenda implements IRepositorioVenda, Serializable {
 	public boolean remover(String codigoVenda) {
 		int i = 0;
 		for (Venda v : this.vendas) {
-			i++;
+			
 			if (v.getCodigoVenda().equals(codigoVenda)) {
 				this.vendas.remove(i);
 				salvarArquivo();
 				return true;
 			}
+			i++;
 		}
 		return false;
 	}

@@ -93,11 +93,12 @@ public class Endereco implements Serializable{
 		return igual;
 	}
 
+	@Override
 	public String toString() {
-		return "Endereco [logradouro= " + logradouro + ", bairro= " + bairro
-				+ ", cep= " + cep + ", numero= " + numero + ", complemento= "
-				+ complemento + ", cidade= " + cidade + ", estado= " + estado
-				+ "]";
+		return "Endereco [logradouro=" + logradouro + ", bairro=" + bairro + ", cep=" + cep + ", numero=" + numero
+				+ ", complemento=" + complemento + ", cidade=" + cidade + ", estado=" + estado + "]";
 	}
+
+	
 
 }

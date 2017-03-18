@@ -96,12 +96,13 @@ public class RepositorioItem implements IRepositorioItem, Serializable {
 
 		int i = 0;
 		for (Item a : this.itens) {
-			i++;
+			
 			if (a.getCodigoProduto().equals(item.getCodigoProduto())) {
-				this.itens.add(i, item);
+				this.itens.set(i, item);
 				salvarArquivo();
 				return true;
 			}
+			i++;
 		}
 		return false;
 	}
@@ -125,12 +126,13 @@ public class RepositorioItem implements IRepositorioItem, Serializable {
 	public boolean remover(String codigoProduto) {
 		int i = 0;
 		for (Item a : this.itens) {
-			i++;
+			
 			if (a.getCodigoProduto().equals(codigoProduto)) {
 				this.itens.remove(i);
 				salvarArquivo();
 				return true;
 			}
+			i++;
 		}
 		return false;
 	}

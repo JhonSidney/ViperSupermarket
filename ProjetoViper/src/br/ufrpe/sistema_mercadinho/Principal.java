@@ -14,143 +14,184 @@ import br.ufrpe.sistema_mercadinho.negocio.beans.Venda;
 
 public class Principal {
 
-	public static void main(String[] args) {
+	public static void criarDados() {
 		SistemaMercadinho fachada = SistemaMercadinho.getInstance();
-		Administrador administrador = null;
-		Fornecedor fornecedor = null;
-		Funcionario funcionario = null;
-		Compra compra = null;
-		Venda venda = null;
-		Item item = null;
-		Endereco endereco = null;
-		double salario, precoCusto, precoVenda, pesoProduto;
-		int quantidade;
-		String telefone = null, email = null, nome, cpf = "09898483434", rg = null, dataEmissao = null, orgaoEmissao = null,
-				sexo = null, estadoCivil = null, nacionalidade = null, naturalidade = null, senha = null, funcao = null,
-				admissao = null, demissao = null, nomeFantasia = null, razaoSocial = null, cnpj = null,
-				inscricaoEstadual = null, codigoProduto = null, nomeProduto = null, descricao = null, categoria = null,
-				logradouro = null, bairro = null, cep = null, numero = null, complemento = null, cidade = null,
-				estado = null;
-		int opcao =0;
-		Scanner in = new Scanner(System.in);
+		Endereco enderecoAdm = new Endereco("Rua Joaqim da silva", "centro", "54700-000", "32", null, "Recife",
+				"Pernambuco");
+		Administrador admin = new Administrador("8787-6756", "admin@gmail.com", enderecoAdm, "Carlos Eduardo",
+				"123.456.789-81", "1234321", "01/01/2016", "12/01/2017", "M", "solteiro", "brasilira", "Recife", "123456789");
+		Endereco endereco = new Endereco("Rua Joaqim da silva", "centro", "54500-000", "32", null, "Recife",
+				"Pernambuco");
+		Fornecedor fornecedor = new Fornecedor("Carretas Speed", "Carretas s/a", "08.471.877/0001-72", "001213923",
+				endereco);
+
+		Item item = new Item("7898921403153", "margarina itaé", 100, "gordura vegetal", "mercearia", 3.4, 5.6, 0.23);
+
+		Funcionario funcionario = new Funcionario("86680516", "jhon.sidney@gmail.com", endereco, "jhon sidney",
+				"096906474-82", "8123456", "12/01/2010", "SDS", "M", "solteiro", "brasileira", "recife", "12345678");
+
+		Compra compra = new Compra("010169", "01", "12/02/03", fornecedor, "dinheiro", 10, item);
+
+		Venda venda = new Venda("0034", funcionario, "12/08/2016", 20, 25, 0, 5, item);
+
+		try {
+			fachada.cadastrarAdministrador(admin);
+
+		} catch (ErroDeNegocioException e) {
+			System.out.println(e.getMessage());
+		}
+
+		try {
+			fachada.cadastrarCompra(compra);
+
+		} catch (ErroDeNegocioException e) {
+			System.out.println(e.getMessage());
+		}
+
+		try {
+			fachada.cadastrarFornecedor(fornecedor);
+		} catch (ErroDeNegocioException e) {
+			System.out.println(e.getMessage());
+		}
+
+		try {
+			fachada.cadastrarFuncionario(funcionario);
+		} catch (ErroDeNegocioException e) {
+			System.out.println(e.getMessage());
+		}
+
+		try {
+			fachada.cadastrarItem(item);
+		} catch (ErroDeNegocioException e) {
+			System.out.println(e.getMessage());
+		}
+		try {
+			fachada.cadastrarVenda(venda);
+		} catch (ErroDeNegocioException e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+
+	
+public static void atualizarDados(){
 		
+		SistemaMercadinho fachada = SistemaMercadinho.getInstance();
+
+		Endereco enderecoAdm = new Endereco("rua da ufrpe", "centro", "54700-000", "33", null, "Recife",
+				"Pernambuco");
+		Administrador admin = new Administrador("9912-6471", "admin@gmail.com", enderecoAdm, "maria eduarda ",
+				"123.456.789-81", "1.234.321", "03/03/2016", "12/01/2017", "M", "solteiro", "brasilira", "Recife", "senha@123");
+		Endereco endereco = new Endereco("Rua da mangueira", "camela", "54500-000", "32", null, "ipojuca",
+				"Pernambuco");
+		Fornecedor fornecedor = new Fornecedor(" Mercadinho frigobox ", "Carretas do brasil s/a ", "08.471.877/0001-72", "02.232.3355-6",
+				endereco);
+
+		Item item = new Item("7898921403153", "nescafé sao bras", 100, "bebida", "mercearia", 7,7, 10);
+
+		Funcionario funcionario = new Funcionario("87604490", "joselma.sidney@gmail.com", endereco, "sidney josue",
+				"096906474-82", "8123456", "12/01/2010", "SDS", "M", "solteiro", "brasileiro", "recife", "12345678");
+
+		Compra compra = new Compra("010169", "2", "12/02/03", fornecedor, "cartao", 10, item);
+
+		Venda venda = new Venda("0034", funcionario, "12/08/2016", 15, 10, 0, 5, item);
 		
-		do{
-		System.out.println("------------------------------");
-		System.out.println("   SISTEMA VIPER SUPERMARKET  ");
-		System.out.println("------------------------------");
-		System.out.println("1 - CADASTRAR                 ");
-		System.out.println("2 - ATUALIZAR                 ");
-		System.out.println("3 - BUSCAR                    ");
-		System.out.println("4 - REMOVER                   ");
-		System.out.println("5 - listar                    ");
-		System.out.println("------------------------------");
+		try {
+			fachada.atualizarAdministrador(admin);
+			
+		} catch (ErroDeNegocioException e) {
+			System.out.println(e.getMessage());
+		}
 
-		opcao = in.nextInt();
+		try {
+			fachada.atualizarCompra(compra);;
+
+		} catch (ErroDeNegocioException e) {
+			System.out.println(e.getMessage());
+		}
+
+		try {
+			fachada.atualizarFornecedor(fornecedor);
+			
+		} catch (ErroDeNegocioException e) {
+			System.out.println(e.getMessage());
+		}
+
+		try {
+			fachada.atualizarFuncionario(funcionario);
+		} catch (ErroDeNegocioException e) {
+			System.out.println(e.getMessage());
+		}
+
+		try {
+			fachada.atualizarItem(item);
+			
+		} catch (ErroDeNegocioException e) {
+			System.out.println(e.getMessage());
+		}
+		try {
+			fachada.atualizarVenda(venda);
+		} catch (ErroDeNegocioException e) {
+			System.out.println(e.getMessage());
+		}
 
 		
-			switch (opcao) {
-			case 1:
-				System.out.println("------------------------------");
-				System.out.println("1 - CADASTRAR ADMINISTRADOR   ");
-				System.out.println("2  -CADASTRAR FUNCIONARIO     ");
-				System.out.println("3 - CADASTRAR FORNECEDOR      ");
-				System.out.println("4 - CADASTRAR COMPRA          ");
-				System.out.println("5 - CADASTRAR VENDA           ");
-				System.out.println("6 - CADASTRAR ITEM(PRODUTO)   ");
-				System.out.println("7- SAIR                       ");
-				System.out.println("------------------------------");
-				opcao = in.nextInt();
-				switch (opcao) {
-				case 1:
-					System.out.println("voce entrou em cadastro adm");
-					try {
-						
-						System.out.println("Cpf: ");
-						cpf = in.nextLine();
-						in.next();
-						System.out.println("nome: ");
-						nome = in.nextLine();
-						in.next();
-						System.out.println("Sexo: ");
-						sexo = in.nextLine();
-						in.next();
-						System.out.println("Telefone: ");
-						telefone = in.nextLine();
-						in.next();
-						System.out.println("Email: ");
-						email = in.nextLine();
-						in.next();
-						System.out.println("Bairro: ");
-						bairro = in.nextLine();
-						in.next();
-						System.out.println("Cep: ");
-						cep = in.nextLine();
-						in.next();
-						System.out.println("Numero: ");
-						numero = in.nextLine();
-						in.next();
-						System.out.println("Estado: ");
-						estado = in.nextLine();
-						in.next();
-						System.out.println("Cidade: ");
-						cidade = in.nextLine();
-						in.next();
-						System.out.println("Complemento: ");
-						complemento = in.nextLine();
-						in.next();
-						System.out.println("Logradouro");
-						logradouro = in.nextLine();
-						in.next();
-						System.out.println("Rg: ");
-						rg = in.nextLine();
-						in.next();
-						System.out.println("Data Emissao: ");
-						dataEmissao = in.nextLine();
-						in.next();
-						System.out.println("orgão Emissor: ");
-						orgaoEmissao = in.nextLine();
-						in.next();
-						System.out.println("Nacionalidade: ");
-						nacionalidade = in.nextLine();
-						in.next();
-						System.out.println("Naturalidade: ");
-						naturalidade = in.nextLine();
-						in.next();
-						System.out.println("Senha: ");
-						senha = in.nextLine();
-						in.next();
-						endereco = new Endereco(logradouro, bairro, cep, numero, complemento, cidade, estado);
-						administrador = new Administrador(telefone, email, endereco, nomeProduto, cpf, rg, dataEmissao,
-								orgaoEmissao, sexo, estadoCivil, nacionalidade, naturalidade, senha);
-						fachada.cadastrarAdministrador(administrador);
-					} catch (ErroDeNegocioException e) {
-						System.out.println(e.getMessage());
-					}
-					break;
-				default:
-					System.out.println("opcao invalida !");
+	}
+	
+	public static void main(String[] args) {
+		criarDados();
+		SistemaMercadinho fachada = SistemaMercadinho.getInstance();
 
-				}
+		System.out.println("LISTANDO OS CADASTROS");
+		for (Administrador a : fachada.listarAdministrador()) {
+			System.out.println(a.toString());
+		}
+		for (Fornecedor a : fachada.listarFornecedor()) {
+			System.out.println(a.toString());
+		}
 
-				break;
-			case 2:
-				break;
-			case 3:
-				break;
-			case 4:
-				break;
-			case 5:
-					for (Administrador a : fachada.listarAdministrador()) {
-					  System.out.println(a.toString());
-					}
-				break;
-			default:
-				System.out.println("opcao invalida !");
+		for (Compra a : fachada.listarCompras()) {
+			System.out.println(a.toString());
+		}
+		for (Item a : fachada.listarItem()) {
+			System.out.println(a.toString());
+		}
 
-			}
-		}while(opcao <7);
-		 
+		for (Venda a : fachada.listarVenda()) {
+			System.out.println(a.toString());
+		}
+
+		for (Funcionario a : fachada.listarFuncionario()) {
+			System.out.println(a.toString());
+		}
+
+		criarDados();// funcionando
+		
+		atualizarDados();
+		
+		System.out.println("LISTANDO OS CADASTROS");
+		for (Administrador a : fachada.listarAdministrador()) {
+			System.out.println(a.toString());
+		}
+		for (Fornecedor a : fachada.listarFornecedor()) {
+			System.out.println(a.toString());
+		}
+
+		for (Compra a : fachada.listarCompras()) {
+			System.out.println(a.toString());
+		}
+		for (Item a : fachada.listarItem()) {
+			System.out.println(a.toString());
+		}
+
+		for (Venda a : fachada.listarVenda()) {
+			System.out.println(a.toString());
+		}
+
+		for (Funcionario a : fachada.listarFuncionario()) {
+			System.out.println(a.toString());
+		}
+
 	}
 
 }

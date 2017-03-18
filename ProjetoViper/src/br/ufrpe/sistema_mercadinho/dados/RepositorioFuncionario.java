@@ -95,12 +95,13 @@ public class RepositorioFuncionario implements IRepositorioFuncionario, Serializ
 	public boolean atualizar(Funcionario funcionario) {
 		int i = 0;
 		for (Funcionario f : this.funcionarios) {
-			i++;
+			
 			if (f.getCpf().equals(funcionario.getCpf())) {
-				this.funcionarios.add(i, funcionario);
+				this.funcionarios.set(i, funcionario);
 				salvarArquivo();
 				return true;
 			}
+			i++;
 		}
 		return false;
 	}
@@ -125,12 +126,13 @@ public class RepositorioFuncionario implements IRepositorioFuncionario, Serializ
 	public boolean remover(String cpf) {
 		int i = 0;
 		for (Funcionario f : this.funcionarios) {
-			i++;
+			
 			if (f.getCpf().equals(cpf)) {
 				this.funcionarios.remove(i);
 				salvarArquivo();
 				return true;
 			}
+			i++;
 		}
 
 		return false;

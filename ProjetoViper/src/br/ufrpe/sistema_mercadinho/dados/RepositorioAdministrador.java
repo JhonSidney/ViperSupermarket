@@ -100,12 +100,13 @@ public class RepositorioAdministrador implements IRepositorioAdministrador, Seri
 
 		int i = 0;
 		for (Administrador a : this.administradores) {
-			i++;
+			
 			if (a.getCpf().equals(adm.getCpf())) {
-				this.administradores.add(i, adm);
+				this.administradores.set(i, adm);
 				salvarArquivo();
 				return true;
 			}
+			i++;
 		}
 
 		return false;
@@ -133,12 +134,13 @@ public class RepositorioAdministrador implements IRepositorioAdministrador, Seri
 
 		int i = 0;
 		for (Administrador a : this.administradores) {
-			i++;
+			
 			if (a.getCpf().equals(cpf)) {
 				this.administradores.remove(i);
 				salvarArquivo();
 				return true;
 			}
+			i++;
 		}
 		return false;
 	}
