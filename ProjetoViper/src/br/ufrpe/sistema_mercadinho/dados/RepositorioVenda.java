@@ -13,17 +13,22 @@ import br.ufrpe.sistema_mercadinho.negocio.beans.Venda;
 
 public class RepositorioVenda implements IRepositorioVenda, Serializable {
 
+	public static final String NOME_ARQUIVOS_BD = "vendas.dat";
 	private ArrayList<Venda> vendas;
 	public static RepositorioVenda instancia;
 
 	private RepositorioVenda() {
-		this.vendas = new ArrayList<Venda>();
+		this.vendas = new ArrayList<>();
 	}
 
 	public static RepositorioVenda getInstance() {
 
 		if (instancia == null) {
-			instancia = new RepositorioVenda();
+		  try{
+			instancia = lerDoArquivo();
+	     	} catch (IOException e){
+	     		e.printStackTrace();
+	     	}
 		}
 		return instancia;
 	}
@@ -31,7 +36,7 @@ public class RepositorioVenda implements IRepositorioVenda, Serializable {
 	public static RepositorioVenda lerDoArquivo() throws IOException {
 
 		RepositorioVenda instanciaLocal = null;
-		File in = new File("arquivos\\cadastroVendas\\vendas.dat");
+		File in = new File(NOME_ARQUIVOS_BD);
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 
@@ -58,7 +63,7 @@ public class RepositorioVenda implements IRepositorioVenda, Serializable {
 		if (instancia == null) {
 			return;
 		}
-		File out = new File("arquivos\\cadastroVendas\\vendas.dat");
+		File out = new File(NOME_ARQUIVOS_BD);
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 
@@ -81,6 +86,7 @@ public class RepositorioVenda implements IRepositorioVenda, Serializable {
 	@Override
 	public boolean cadastrar(Venda venda) {
 		this.vendas.add(venda);
+		salvarArquivo();
 		return true;
 	}
 
@@ -91,6 +97,7 @@ public class RepositorioVenda implements IRepositorioVenda, Serializable {
 			i++;
 			if (v.getCodigoVenda().equals(venda.getCodigoVenda())) {
 				this.vendas.add(i, venda);
+				salvarArquivo();
 				return true;
 			}
 		}
@@ -119,6 +126,7 @@ public class RepositorioVenda implements IRepositorioVenda, Serializable {
 			i++;
 			if (v.getCodigoVenda().equals(codigoVenda)) {
 				this.vendas.remove(i);
+				salvarArquivo();
 				return true;
 			}
 		}

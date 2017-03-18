@@ -14,17 +14,22 @@ import br.ufrpe.sistema_mercadinho.negocio.beans.Funcionario;
 public class RepositorioFuncionario implements IRepositorioFuncionario, Serializable {
 
 	// ATRIBUTOS
+	public static final String NOME_ARQUIVOS_BD = "funcionarios.dat";
 	private ArrayList<Funcionario> funcionarios;
 	public static RepositorioFuncionario instancia;
 
 	private RepositorioFuncionario() {
-		this.funcionarios = new ArrayList<Funcionario>();
+		this.funcionarios = new ArrayList<>();
 	}
 
 	public static RepositorioFuncionario getInstance() {
 
 		if (instancia == null) {
-			instancia = new RepositorioFuncionario();
+			try{
+				instancia =lerDoArquivo();
+			} catch (IOException e){
+				e.printStackTrace();
+			}
 		}
 		return instancia;
 	}
@@ -32,7 +37,7 @@ public class RepositorioFuncionario implements IRepositorioFuncionario, Serializ
 	public static RepositorioFuncionario lerDoArquivo() throws IOException {
 
 		RepositorioFuncionario instanciaLocal = null;
-		File in = new File("arquivos\\cadastroFuncionarios\\funcionarios.dat");
+		File in = new File(NOME_ARQUIVOS_BD);
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 
@@ -59,7 +64,7 @@ public class RepositorioFuncionario implements IRepositorioFuncionario, Serializ
 		if (instancia == null) {
 			return;
 		}
-		File out = new File("arquivos\\cadastroFuncionarios\\funcionarios.dat");
+		File out = new File(NOME_ARQUIVOS_BD);
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 
@@ -82,6 +87,7 @@ public class RepositorioFuncionario implements IRepositorioFuncionario, Serializ
 	@Override
 	public boolean cadastrar(Funcionario funcionario) {
 		this.funcionarios.add(funcionario);
+		salvarArquivo();
 		return true;
 	}
 
@@ -92,6 +98,7 @@ public class RepositorioFuncionario implements IRepositorioFuncionario, Serializ
 			i++;
 			if (f.getCpf().equals(funcionario.getCpf())) {
 				this.funcionarios.add(i, funcionario);
+				salvarArquivo();
 				return true;
 			}
 		}
@@ -121,6 +128,7 @@ public class RepositorioFuncionario implements IRepositorioFuncionario, Serializ
 			i++;
 			if (f.getCpf().equals(cpf)) {
 				this.funcionarios.remove(i);
+				salvarArquivo();
 				return true;
 			}
 		}

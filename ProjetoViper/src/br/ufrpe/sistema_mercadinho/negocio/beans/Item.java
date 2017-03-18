@@ -1,21 +1,24 @@
 package br.ufrpe.sistema_mercadinho.negocio.beans;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable {
 	private String codigoProduto;
-	private String nome;
+	private String nomeProduto;
+	private int quantidade;
 	private String descricao;
 	private String categoria;
 	private double precoCusto;
 	private double precoVenda;
 	private double pesoProduto;
-	private int quantidade;
+	
 
-	public Item(String codigoProduto, String nome, int quantidade,
+	public Item(String codigoProduto, String nomeProduto, int quantidade,
 			String descricao, String categoria, double precoCusto,
 			double precoVenda, double pesoProduto) {
 
 		this.setCodigoProduto(codigoProduto);
-		this.setNome(nome);
+		this.setnomeProduto(nomeProduto);
 		this.setDescricao(descricao);
 		this.setCategoria(categoria);
 		this.setPrecoCusto(precoCusto);
@@ -32,12 +35,12 @@ public class Item {
 		this.codigoProduto = codigoProduto;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getnomeProduto() {
+		return nomeProduto;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setnomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
 
 	public String getDescricao() {
@@ -97,7 +100,7 @@ public class Item {
 	}
 
 	public String toString() {
-		return "Item [codigoProduto=" + codigoProduto + ", nome=" + nome
+		return "Item [codigoProduto=" + codigoProduto + ", nomeProduto=" + nomeProduto
 				+ ", quantidade=" + quantidade + ", descricao=" + descricao
 				+ ", categoria=" + categoria + ", precoCusto=" + precoCusto
 				+ ", precoVenda=" + precoVenda + ", pesoProduto=" + pesoProduto

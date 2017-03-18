@@ -14,6 +14,7 @@ import br.ufrpe.sistema_mercadinho.negocio.beans.Item;
 public class RepositorioItem implements IRepositorioItem, Serializable {
 
 	// ATRIBUTOS
+	public static final String NOME_ARQUIVOS_BD = "itens.dat";
 	private ArrayList<Item> itens;
 	public static RepositorioItem instancia;
 
@@ -24,7 +25,11 @@ public class RepositorioItem implements IRepositorioItem, Serializable {
 	public static RepositorioItem getInstance() {
 
 		if (instancia == null) {
-			instancia = new RepositorioItem();
+			try{
+				instancia =lerDoArquivo();
+			} catch (IOException e){
+				e.printStackTrace();
+			}
 		}
 		return instancia;
 	}
@@ -32,7 +37,7 @@ public class RepositorioItem implements IRepositorioItem, Serializable {
 	public static RepositorioItem lerDoArquivo() throws IOException {
 
 		RepositorioItem instanciaLocal = null;
-		File in = new File("arquivos\\cadastroItens\\itens.dat");
+		File in = new File(NOME_ARQUIVOS_BD);
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 
@@ -59,7 +64,7 @@ public class RepositorioItem implements IRepositorioItem, Serializable {
 		if (instancia == null) {
 			return;
 		}
-		File out = new File("arquivos\\cadastroItens\\itens.dat");
+		File out = new File(NOME_ARQUIVOS_BD);
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 
@@ -82,6 +87,7 @@ public class RepositorioItem implements IRepositorioItem, Serializable {
 	@Override
 	public boolean cadastrar(Item item) {
 		this.itens.add(item);
+		salvarArquivo();
 		return true;
 	}
 
@@ -93,6 +99,7 @@ public class RepositorioItem implements IRepositorioItem, Serializable {
 			i++;
 			if (a.getCodigoProduto().equals(item.getCodigoProduto())) {
 				this.itens.add(i, item);
+				salvarArquivo();
 				return true;
 			}
 		}
@@ -121,6 +128,7 @@ public class RepositorioItem implements IRepositorioItem, Serializable {
 			i++;
 			if (a.getCodigoProduto().equals(codigoProduto)) {
 				this.itens.remove(i);
+				salvarArquivo();
 				return true;
 			}
 		}

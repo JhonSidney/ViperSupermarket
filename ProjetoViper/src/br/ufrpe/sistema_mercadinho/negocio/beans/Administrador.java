@@ -4,7 +4,7 @@ public class Administrador extends Pessoa {
 
 	private String nivelAcesso;
 
-	public Administrador(String telefone, String email, String endereco,
+	public Administrador(String telefone, String email, Endereco endereco,
 			String nome, String cpf, String rg, String dataEmissao,
 			String orgaoEmissao, String sexo, String estadoCivil,
 			String nacionalidade, String naturalidade, String senha) {

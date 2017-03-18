@@ -1,6 +1,8 @@
 package br.ufrpe.sistema_mercadinho.negocio.beans;
 
-public class Fornecedor {
+import java.io.Serializable;
+
+public class Fornecedor implements Serializable{
 
 	private String nomeFantasia;
 	private String razaoSocial;
@@ -8,7 +10,7 @@ public class Fornecedor {
 	private String inscricaoEstadual;
 	private Endereco endereco;
 
-	public Fornecedor(String id, String nomeFantasia, String razaoSocial,
+	public Fornecedor( String nomeFantasia, String razaoSocial,
 			String cnpj, String inscricaoEstadual, Endereco endereco) {
 		this.setNomeFantasia(nomeFantasia);
 		this.setRazaoSocial(razaoSocial);

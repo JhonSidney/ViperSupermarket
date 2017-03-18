@@ -1,10 +1,12 @@
 package br.ufrpe.sistema_mercadinho.negocio.beans;
 
-public abstract class Pessoa {
+import java.io.Serializable;
+
+public abstract class Pessoa implements Serializable {
 
 	protected String telefone;
 	protected String email;
-	protected String endereco;
+	protected Endereco endereco;
 	protected String nome;
 	protected String cpf;
 	protected String rg;
@@ -16,7 +18,7 @@ public abstract class Pessoa {
 	protected String naturalidade;
 	protected String senha;
 
-	public Pessoa(String telefone, String email, String endereco, String nome,
+	public Pessoa(String telefone, String email, Endereco endereco, String nome,
 			String cpf, String rg, String dataEmissao, String orgaoEmissao,
 			String sexo, String estadoCivil, String nacionalidade,
 			String naturalidade, String senha) {
@@ -52,11 +54,11 @@ public abstract class Pessoa {
 		this.email = email;
 	}
 
-	public String getEndereco() {
+	public Endereco getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereco(String endereco) {
+	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
 

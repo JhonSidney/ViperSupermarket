@@ -12,19 +12,27 @@ import java.util.ArrayList;
 import br.ufrpe.sistema_mercadinho.negocio.beans.Administrador;
 
 public class RepositorioAdministrador implements IRepositorioAdministrador, Serializable {
-
+	
+	public static final String NOME_ARQUIVO_BD = "administradores.dat";
+	
 	private ArrayList<Administrador> administradores;
 	public static RepositorioAdministrador instancia;
 
 	
 	private RepositorioAdministrador() {
-		this.administradores = new ArrayList<Administrador>();
+		administradores = new ArrayList<>();
+
 	}
  
 	public static RepositorioAdministrador getInstance() {
 
 		if (instancia == null) {
-			instancia = new RepositorioAdministrador();
+			try {
+				instancia = lerDoArquivo();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return instancia;
 	}
@@ -33,7 +41,7 @@ public class RepositorioAdministrador implements IRepositorioAdministrador, Seri
 	public static RepositorioAdministrador lerDoArquivo() throws IOException {
 
 		RepositorioAdministrador instanciaLocal = null;
-		File in = new File("arquivos\\cadastroAdministradores\\administradores.dat");
+		File in = new File(NOME_ARQUIVO_BD);
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 
@@ -60,7 +68,7 @@ public class RepositorioAdministrador implements IRepositorioAdministrador, Seri
 		if (instancia == null) {
 			return;
 		}
-		File out = new File("arquivos\\cadastroAdministradores\\administradores.dat");
+		File out = new File(NOME_ARQUIVO_BD);
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 
@@ -83,6 +91,7 @@ public class RepositorioAdministrador implements IRepositorioAdministrador, Seri
 	@Override
 	public boolean cadastrar(Administrador adm) {
 		this.administradores.add(adm);
+		salvarArquivo();
 		return true;
 	}
 
@@ -94,6 +103,7 @@ public class RepositorioAdministrador implements IRepositorioAdministrador, Seri
 			i++;
 			if (a.getCpf().equals(adm.getCpf())) {
 				this.administradores.add(i, adm);
+				salvarArquivo();
 				return true;
 			}
 		}
@@ -126,6 +136,7 @@ public class RepositorioAdministrador implements IRepositorioAdministrador, Seri
 			i++;
 			if (a.getCpf().equals(cpf)) {
 				this.administradores.remove(i);
+				salvarArquivo();
 				return true;
 			}
 		}

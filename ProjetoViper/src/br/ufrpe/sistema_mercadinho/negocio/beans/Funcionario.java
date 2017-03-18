@@ -8,15 +8,17 @@ public class Funcionario extends Pessoa {
 	private String demissao;
 	private double salario;
 
-	public Funcionario(String telefone, String email, String endereco, String nome, String cpf, String rg,
+	public Funcionario(String telefone, String email, Endereco endereco, String nome, String cpf, String rg,
 			String dataEmissao, String orgaoEmissao, String sexo, String estadoCivil, String nacionalidade,
 			String naturalidade, String senha) {
 		super(telefone, email, endereco, nome, cpf, rg, dataEmissao, orgaoEmissao, sexo, estadoCivil, nacionalidade,
 				naturalidade, senha);
+		
 		this.setFuncao(funcao);
 		this.setAdmissao(admissao);
 		this.setDemissao(demissao);
 		this.setSalario(salario);
+		
 	}
 
 	public String getFuncao(){
@@ -52,9 +54,14 @@ public class Funcionario extends Pessoa {
 		return igual;
 	}
 
+	@Override
 	public String toString() {
-		return "Funcionario [funcao=" + funcao + ", admissao=" + admissao
-				+ ", demissao=" + demissao + ", senha=" + senha + ", salario="
-				+ salario + "]";
+		return "Funcionario [funcao=" + funcao + ", admissao=" + admissao + ", demissao=" + demissao + ", salario="
+				+ salario + ", telefone=" + telefone + ", email=" + email + ", endereco=" + endereco + ", nome=" + nome
+				+ ", cpf=" + cpf + ", rg=" + rg + ", dataEmissao=" + dataEmissao + ", orgaoEmissao=" + orgaoEmissao
+				+ ", sexo=" + sexo + ", estadoCivil=" + estadoCivil + ", nacionalidade=" + nacionalidade
+				+ ", naturalidade=" + naturalidade + ", senha=" + senha + "]";
 	}
+
+	
 }

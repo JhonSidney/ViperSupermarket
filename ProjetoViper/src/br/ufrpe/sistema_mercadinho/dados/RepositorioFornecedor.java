@@ -13,17 +13,22 @@ import br.ufrpe.sistema_mercadinho.negocio.beans.Fornecedor;
 
 public class RepositorioFornecedor implements IRepositorioFornecedor, Serializable {
 
+	public static final String NOME_ARQUIVOS_BD = "fornecedores.dat";
 	private ArrayList<Fornecedor> fornecedores;
 	public static RepositorioFornecedor instancia;
 
 	private RepositorioFornecedor() {
-		this.fornecedores = new ArrayList<Fornecedor>();
+		this.fornecedores = new ArrayList<>();
 	}
 
 	public static RepositorioFornecedor getInstance() {
 
 		if (instancia == null) {
-			instancia = new RepositorioFornecedor();
+			try{
+				instancia =lerDoArquivo();
+			} catch( IOException e ){
+				e.printStackTrace();
+			}
 		}
 		return instancia;
 	}
@@ -31,7 +36,7 @@ public class RepositorioFornecedor implements IRepositorioFornecedor, Serializab
 	public static RepositorioFornecedor lerDoArquivo() throws IOException {
 
 		RepositorioFornecedor instanciaLocal = null;
-		File in = new File("arquivos\\cadastroFornecedores\\fornecedores.dat");
+		File in = new File(NOME_ARQUIVOS_BD);
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 
@@ -58,7 +63,7 @@ public class RepositorioFornecedor implements IRepositorioFornecedor, Serializab
 		if (instancia == null) {
 			return;
 		}
-		File out = new File("arquivos\\cadastroFornecedores\\fornecedores.dat");
+		File out = new File(NOME_ARQUIVOS_BD);
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 
@@ -81,6 +86,7 @@ public class RepositorioFornecedor implements IRepositorioFornecedor, Serializab
 	@Override
 	public boolean cadastrar(Fornecedor fornecedor) {
 		this.fornecedores.add(fornecedor);
+		salvarArquivo();
 		return true;
 	}
 
@@ -91,6 +97,7 @@ public class RepositorioFornecedor implements IRepositorioFornecedor, Serializab
 			i++;
 			if (f.getCnpj().equals(fornecedor.getCnpj())) {
 				this.fornecedores.add(i, fornecedor);
+				salvarArquivo();
 				return true;
 			}
 
@@ -122,6 +129,7 @@ public class RepositorioFornecedor implements IRepositorioFornecedor, Serializab
 			i++;
 			if (f.getCnpj().equals(cnpj)) {
 				this.fornecedores.remove(i);
+				salvarArquivo();
 				return true;
 			}
 		}

@@ -14,17 +14,24 @@ import br.ufrpe.sistema_mercadinho.negocio.beans.Compra;
 
 public class RepositorioCompra implements IRepositorioCompra, Serializable {
 
+	public static final String NOME_ARQUIVO_BD = "compras.dat";
+	
 	private ArrayList<Compra> compras;
 	public static RepositorioCompra instancia;
 
 	private RepositorioCompra() {
-		this.compras = new ArrayList<Compra>();
+		this.compras = new ArrayList<>();
 	}
 
 	public static RepositorioCompra getInstance() {
 
 		if (instancia == null) {
-			instancia = new RepositorioCompra();
+			try {
+				instancia = lerDoArquivo();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return instancia;
 	}
@@ -32,7 +39,7 @@ public class RepositorioCompra implements IRepositorioCompra, Serializable {
 	public static RepositorioCompra lerDoArquivo() throws IOException {
 
 		RepositorioCompra instanciaLocal = null;
-		File in = new File("arquivos\\cadastroCompras\\Compras.dat");
+		File in = new File(NOME_ARQUIVO_BD);
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 
@@ -59,7 +66,7 @@ public class RepositorioCompra implements IRepositorioCompra, Serializable {
 		if (instancia == null) {
 			return;
 		}
-		File out = new File("arquivos\\cadastroCompras\\Compras.dat");
+		File out = new File(NOME_ARQUIVO_BD);
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 
@@ -82,6 +89,7 @@ public class RepositorioCompra implements IRepositorioCompra, Serializable {
 	@Override
 	public boolean cadastrar(Compra compra) {
 		this.compras.add(compra);
+		salvarArquivo();
 		return true;
 	}
 
@@ -92,6 +100,7 @@ public class RepositorioCompra implements IRepositorioCompra, Serializable {
 			i++;
 			if (c.getCodigoPedido().equals(compra.getCodigoPedido())) {
 				this.compras.add(i, compra);
+				salvarArquivo();
 				return true;
 			}
 		}
@@ -125,6 +134,7 @@ public class RepositorioCompra implements IRepositorioCompra, Serializable {
 			i++;
 			if (c.getCodigoPedido().equals(codigoPedido)) {
 				this.compras.remove(i);
+				salvarArquivo();
 				return true;
 			}
 

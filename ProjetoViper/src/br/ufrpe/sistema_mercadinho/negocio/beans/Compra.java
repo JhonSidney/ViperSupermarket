@@ -1,6 +1,8 @@
 package br.ufrpe.sistema_mercadinho.negocio.beans;
 
-public class Compra {
+import java.io.Serializable;
+
+public class Compra implements Serializable {
 
 	private String codigoPedido;
 	private String serie;

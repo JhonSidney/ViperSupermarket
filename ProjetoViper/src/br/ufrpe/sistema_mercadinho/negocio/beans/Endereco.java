@@ -1,6 +1,8 @@
 package br.ufrpe.sistema_mercadinho.negocio.beans;
 
-public class Endereco {
+import java.io.Serializable;
+
+public class Endereco implements Serializable{
 
 	private String logradouro;
 	private String bairro;
@@ -92,9 +94,9 @@ public class Endereco {
 	}
 
 	public String toString() {
-		return "Endereco [logradouro=" + logradouro + ", bairro=" + bairro
-				+ ", cep=" + cep + ", numero=" + numero + ", complemento="
-				+ complemento + ", cidade=" + cidade + ", estado=" + estado
+		return "Endereco [logradouro= " + logradouro + ", bairro= " + bairro
+				+ ", cep= " + cep + ", numero= " + numero + ", complemento= "
+				+ complemento + ", cidade= " + cidade + ", estado= " + estado
 				+ "]";
 	}
 

@@ -103,7 +103,7 @@ public class SistemaMercadinho {
 		this.funcionarios.cadastrar(funcionario);
 	}
 
-	public void atualizarFunciona(Funcionario funcionario) throws ErroDeNegocioException {
+	public void atualizarFuncionario(Funcionario funcionario) throws ErroDeNegocioException {
 		this.funcionarios.atualizar(funcionario);
 	}
 
