@@ -6,7 +6,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 
 public class BackofficeController {
-	private Principal principal;
+	
 	
 	@FXML
 	private MenuBar menuBar;
@@ -78,7 +78,7 @@ public class BackofficeController {
 	private MenuItem MIR_Vendas;
 	
 	
-	
+	private Principal principal;
 	
 	public void setPrincipal(Principal principal) {
 		this.principal = principal;

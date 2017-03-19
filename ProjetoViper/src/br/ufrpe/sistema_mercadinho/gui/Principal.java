@@ -58,7 +58,7 @@ public class Principal extends Application {
 	public void showLogin() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Principal.class.getResource("/br/ufrpe/sistema_mercadinho/gui/TelaLogin.fxml"));
+			loader.setLocation(Principal.class.getResource("TelaLogin.fxml"));
 			AnchorPane Login = (AnchorPane) loader.load();
 
 			rootLayout.setCenter(Login);
