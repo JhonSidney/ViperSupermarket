@@ -161,7 +161,7 @@ public class SistemaMercadinho {
 		this.vendas.remover(codigoVenda);
 	}
 	
-	public boolean efetuarLogin(String cpf, String senha) {
+	public int efetuarLogin(String cpf, String senha) {
 		return this.logins.efetuarLogin(cpf, senha);
 	}
 	

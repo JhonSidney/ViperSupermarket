@@ -18,15 +18,15 @@ public class ControladorLogin {
 	}
 
 	 
-	public boolean efetuarLogin(String cpf, String senha) {
-		boolean igual = false;
+	public int efetuarLogin(String cpf, String senha) {
+		int igual = 0;
 		Administrador a = this.administrador.procurar(cpf);
 		Funcionario f = this.funcionario.procurar(cpf);
 
 		if (a != null && a.getSenha().equals(senha)) {
-			igual = true;
+			igual = 1;
 		} else if (f != null && f.getSenha().equals(senha)) {
-			igual = true;
+			igual = -1;
 		}
 
 		return igual;

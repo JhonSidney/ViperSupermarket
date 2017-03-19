@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.sistema_mercadinho.gui.Backoffice">
+	<children>
+		<MenuBar fx:id="menuBar">
+			<menus>
+				<Menu fx:id="menuCadastros" mnemonicParsing="false" text="Cadastros">
+					<items>
+						<MenuItem fx:id="MIC_CadastrarAdministrador" mnemonicParsing="false" text="Cadastrar Administrador" />
+						<MenuItem fx:id="MIC_CadastrarFuncionario" mnemonicParsing="false" text="Cadastrar Funcionario" />
+						<MenuItem fx:id="MIC_CadastrarFornecedor" mnemonicParsing="false" text="Cadastrar Fornecedor" />
+                  <MenuItem fx:id="MIC_CadastrarProduto" mnemonicParsing="false" text="Cadastrar Produto" />
+					</items>
+				</Menu>
+				<Menu fx:id="menuMovimentacoes" mnemonicParsing="false" text="Movimentações">
+					<items>
+                  <MenuItem fx:id="MIM_AteracoesPrecoDeProduto" mnemonicParsing="false" text="Altereções Preço De Produto" />
+                  <MenuItem fx:id="MIM_ConsultarProdutos" mnemonicParsing="false" text="Consultar Produtos" />
+                  <MenuItem fx:id="MIM_Faturamento" mnemonicParsing="false" text="Faturamento" />
+						<MenuItem fx:id="MIM_MovimentacaoDeEstoque" mnemonicParsing="false" text="Movimentação De Estoque" />
+						<MenuItem fx:id="MIM_PedidoDeCompra" mnemonicParsing="false" text="Pedido de Compra" />
+						<MenuItem fx:id="MIM_PedidoDeVenda" mnemonicParsing="false" text="Pedido de Venda" />
+					</items>
+				</Menu>
+            <Menu fx:id="menuPDV" mnemonicParsing="false" text="PDV">
+               <items>
+                  <MenuItem fx:id="MIP_FechamentoDeCaixa" mnemonicParsing="false" text="Fechamento De Caixa" />
+               </items>
+            </Menu>
+				<Menu fx:id="menuFiscal" mnemonicParsing="false" text="Fiscal">
+					<items>
+						<MenuItem fx:id="MIFiscal_EmissaoDeNotaFiscal" mnemonicParsing="false" text="Emissao De Nota Fiscal" />
+                  <MenuItem fx:id="MIFiscal_lancarNotaFiscal" mnemonicParsing="false" text="Lançar Nota Fiscal" />
+					</items>
+				</Menu>
+            <Menu fx:id="menuFinanceiro" mnemonicParsing="false" text="Financeiro">
+               <items>
+                  <MenuItem fx:id="MIFinanceiro_DocumentosAReceber" mnemonicParsing="false" text="Documentos a Receber" />
+                  <MenuItem fx:id="MIFinanceiro_DocumentosAPagar" mnemonicParsing="false" text="Documentos a Pagar" />
+                  <MenuItem fx:id="MIFinanceiro_FluxoDeCaixa" mnemonicParsing="false" text="Fluxo De Caixa" />
+               </items>
+            </Menu>
+				<Menu fx:id="menuRelatorios" mnemonicParsing="false" text="Relatorios">
+					<items>
+						<MenuItem fx:id="MIR_Compras" mnemonicParsing="false" text="Compras" />
+                  <MenuItem fx:id="MIR_Fornecedores" mnemonicParsing="false" text="Fornecedores" />
+                  <MenuItem fx:id="MIR_Funcionarios" mnemonicParsing="false" text="Funcionarios" />
+                  <MenuItem fx:id="MIR_Produtos" mnemonicParsing="false" text="Produtos" />
+                  <MenuItem fx:id="MIR_Vendas" mnemonicParsing="false" text="Vendas" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+		<AnchorPane fx:id="anchorPane" prefHeight="429.0" prefWidth="706.0">
+         <children>
+            <ImageView fitHeight="428.0" fitWidth="714.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
+         </children></AnchorPane>
+	</children>
+</VBox>
