@@ -5,27 +5,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.sistema_mercadinho.gui.CadastroAdministradorController">
    <children>
-      <MenuBar>
-        <menus>
-          <Menu mnemonicParsing="false" text="Cadastros">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Processos">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Relatorios">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <AnchorPane prefHeight="377.0" prefWidth="600.0" />
+      <AnchorPane prefHeight="402.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="MIC_CA_salvar" layoutX="480.0" layoutY="336.0" mnemonicParsing="false" onDragDetected="" text="Salvar" />
+            <Label fx:id="texto" alignment="CENTER" layoutX="105.0" layoutY="172.0" prefHeight="17.0" prefWidth="460.0" text="tela de cadastro de  administrador , cadastrar,atualizar e remover" />
+         </children></AnchorPane>
    </children>
 </VBox>

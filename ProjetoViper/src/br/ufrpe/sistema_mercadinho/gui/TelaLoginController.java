@@ -33,7 +33,7 @@ public class TelaLoginController {
 	}
 
 	@FXML
-	public void backoffice(ActionEvent event) {
+	public void acessarLogin(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {
@@ -42,7 +42,7 @@ public class TelaLoginController {
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/Backoffice.fxml"));
 			} else {
 				stage = (Stage) TL_BT_Acessar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaLogin.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaLogins.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);

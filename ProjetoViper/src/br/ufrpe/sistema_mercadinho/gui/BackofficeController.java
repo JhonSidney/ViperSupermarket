@@ -3,15 +3,9 @@ package br.ufrpe.sistema_mercadinho.gui;
 import javafx.fxml.FXML;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.MenuItem;.*?>
 
-public class BackofficeController {
-	
-	
-	@FXML
-	private MenuBar menuBar;
-	@FXML
-	private Menu menuCadastros;
+
 	@FXML
 	private Menu menuMovimentacoes;
 	@FXML
@@ -77,10 +71,16 @@ public class BackofficeController {
 	@FXML
 	private MenuItem MIR_Vendas;
 	
-	
 	private Principal principal;
 	
 	public void setPrincipal(Principal principal) {
 		this.principal = principal;
 	}
+	
+	
+		
+	
+	
+	
+	
 }
