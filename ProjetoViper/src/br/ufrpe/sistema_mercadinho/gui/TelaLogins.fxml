@@ -12,7 +12,7 @@
    <children>
       <ImageView fitHeight="635.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../Desktop/ProjetoRasimyTelas/loginTela.jpg" />
+            <Image url="@picture/loginTela.jpg" />
          </image>
       </ImageView>
       <Pane prefHeight="600.0" prefWidth="1000.0">

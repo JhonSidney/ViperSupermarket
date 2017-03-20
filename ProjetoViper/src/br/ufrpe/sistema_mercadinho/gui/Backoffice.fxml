@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.effect.*?>
@@ -10,15 +11,41 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="600.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../Desktop/ProjetoRasimyTelas/backofficevazio.jpg" />
+            <Image url="@picture/backofficevazio.jpg" />
          </image>
       </ImageView>
-      <Button mnemonicParsing="false" prefHeight="102.0" prefWidth="145.0" text="Button" />
-      <Button layoutX="145.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="156.0" text="Button" />
+      <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="145.0">
+         <graphic>
+            <ImageView fitHeight="75.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@picture/cadastro.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button layoutX="161.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="145.0" wrapText="true">
+         <graphic>
+            <ImageView fitHeight="86.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@picture/movimentacao.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="322.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="145.0">
+         <graphic>
+            <ImageView fitHeight="92.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@picture/pdv.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="500.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="145.0" text="FISCAL" />
+      <Button layoutX="664.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="145.0" text="FINANCEIRO" />
+      <Button layoutX="829.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="145.0" text="RELATORIOS" />
    </children>
 </AnchorPane>
