@@ -9,9 +9,17 @@ import br.ufrpe.sistema_mercadinho.negocio.beans.Venda;
 public class ControladorVenda {
 
 	private RepositorioVenda repositorioVenda;
+	private static ControladorVenda instance;
 
-	public ControladorVenda() {
+	private ControladorVenda() {
 		this.repositorioVenda = RepositorioVenda.getInstance();
+	}
+
+	public static ControladorVenda getInstance() {
+		if (instance == null) {
+			instance = new ControladorVenda();
+		}
+		return instance;
 	}
 
 	public void cadastrar(Venda venda) throws ErroDeNegocioException {
@@ -21,7 +29,6 @@ public class ControladorVenda {
 			throw new ErroDeNegocioException("Venda Ja Existe !");
 		}
 	}
-	
 
 	public void atualizar(Venda venda) throws ErroDeNegocioException {
 		if (venda != null && this.existe(venda.getCodigoVenda())) {

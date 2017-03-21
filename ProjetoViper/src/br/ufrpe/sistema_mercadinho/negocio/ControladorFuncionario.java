@@ -9,23 +9,31 @@ import br.ufrpe.sistema_mercadinho.negocio.beans.Funcionario;
 public class ControladorFuncionario {
 
 	private RepositorioFuncionario repositorioFuncionario;
+	private static ControladorFuncionario instance;
 
-	public ControladorFuncionario() {
+	private ControladorFuncionario() {
 		this.repositorioFuncionario = RepositorioFuncionario.getInstance();
+	}
+
+	public static ControladorFuncionario getInstance() {
+		if (instance == null) {
+			instance = new ControladorFuncionario();
+		}
+		return instance;
 	}
 
 	public void cadastrar(Funcionario funcionario) throws ErroDeNegocioException {
 		if (funcionario != null && !this.existe(funcionario.getCpf())) {
 			this.repositorioFuncionario.cadastrar(funcionario);
 		} else {
-			throw new ErroDeNegocioException("Funcionario Ja Existe !");
+			
 		}
 	}
 
 	public void atualizar(Funcionario funcionario) throws ErroDeNegocioException {
 		if (funcionario != null && this.existe(funcionario.getCpf())) {
 			this.repositorioFuncionario.atualizar(funcionario);
-			
+
 		} else {
 			throw new ErroDeNegocioException("Funcionario Não Existe !");
 		}
@@ -33,9 +41,6 @@ public class ControladorFuncionario {
 
 	public Funcionario procurar(String cpf) throws ErroDeNegocioException {
 		Funcionario resultado = this.repositorioFuncionario.procurar(cpf);
-		if (resultado == null) {
-			throw new ErroDeNegocioException("Funcionario Não Existe !");
-		}
 		return resultado;
 	}
 

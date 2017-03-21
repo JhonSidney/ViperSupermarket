@@ -9,9 +9,17 @@ import br.ufrpe.sistema_mercadinho.negocio.beans.Item;
 public class ControladorItem {
 
 	private RepositorioItem repositorioItem;
+	private static ControladorItem instance;
 
-	public ControladorItem() {
+	private ControladorItem() {
 		this.repositorioItem = RepositorioItem.getInstance();
+	}
+
+	public static ControladorItem getInstance() {
+		if (instance == null) {
+			instance = new ControladorItem();
+		}
+		return instance;
 	}
 
 	public void cadastrar(Item item) throws ErroDeNegocioException {

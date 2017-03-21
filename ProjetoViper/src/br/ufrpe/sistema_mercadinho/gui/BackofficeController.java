@@ -1,86 +1,206 @@
 package br.ufrpe.sistema_mercadinho.gui;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;.*?>
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
+public class BackofficeController {
 
 	@FXML
-	private Menu menuMovimentacoes;
+	private Button menuCadastro;
 	@FXML
-	private Menu menuPDV;
+	private Button menuMovimentacoes;
 	@FXML
-	private Menu menuFiscal;
+	private Button menuPDV;
 	@FXML
-	private Menu menuFinanceiro;
+	private Button menuFiscal;
 	@FXML
-	private Menu menuRelatorios;
+	private Button menuFinanceiro;
+	@FXML
+	private Button menuRelatorios;
+
 	
-	
-	
-	@FXML
-	private MenuItem MIC_CadastrarAdministrador;
-	@FXML
-	private MenuItem MIC_CadastrarFuncionario;
-	@FXML
-	private MenuItem MIC_CadastrarFornecedor;
-	@FXML
-	private MenuItem MIC_CadastrarProduto;
-	
-	
-	@FXML
-	private MenuItem MIM_AteracoesPrecoDeProduto;
-	@FXML
-	private MenuItem MIM_ConsultarProdutos;
-	@FXML
-	private MenuItem MIM_Faturamento;
-	@FXML
-	private MenuItem MIM_MovimentacaoDeEstoque;
-	@FXML
-	private MenuItem MIM_PedidoDeCompra;
-	@FXML
-	private MenuItem MIM_PedidoDeVenda;
-	
-	
-	@FXML
-	private MenuItem MIP_FechamentoDeCaixa;
-	
-	
-	@FXML
-	private MenuItem MIFiscal_EmissaoDeNotaFiscal;
-	@FXML
-	private MenuItem MIFiscal_lancarNotaFiscal;
-	
-	@FXML
-	private MenuItem MIFinanceiro_DocumentosAReceber;
-	@FXML
-	private MenuItem MIFinanceiro_DocumentosAPagar;
-	@FXML
-	private MenuItem MIFinanceiro_FluxoDeCaixa;
-	
-	
-	@FXML
-	private MenuItem MIR_Compras;
-	@FXML
-	private MenuItem MIR_Fornecedores;
-	@FXML
-	private MenuItem MIR_Funcionarios;
-	@FXML
-	private MenuItem MIR_Produtos;
-	@FXML
-	private MenuItem MIR_Vendas;
-	
+//	@FXML
+//	private Button MIM_AlteracoesDePreco;
+//
+//	@FXML
+//	private Button MIM_ConsultarProdutos;
+//
+//	@FXML
+//	private Button MIM_Faturamento;
+//
+//	@FXML
+//	private Button MIM_MovimentacaoDeEstoque;
+//
+//	@FXML
+//	private Button MIM_PedidoDeCompra;
+//
+//	@FXML
+//	private Button MIM_PedidoDeVenda;
+//
+//	@FXML
+//	private Button MIP_FechamentoDeCaixa;
+//
+//	@FXML
+//	private Button MIFiscal_EmissaoDeNotaFiscal;
+//
+//	@FXML
+//	private Button MIFiscal_lancarNotaFiscal;
+//
+//	@FXML
+//	private Button MIFinanceiro_DocumentosAReceber;
+//
+//	@FXML
+//	private Button MIFinanceiro_DocumentosAPagar;
+//
+//	@FXML
+//	private Button MIFinanceiro_FluxoDeCaixa;
+//
+//	@FXML
+//	private Button MIR_Compras;
+//
+//	@FXML
+//	private Button MIR_Fornecedores;
+//
+//	@FXML
+//	private Button MIR_Funcionarios;
+//
+//	@FXML
+//	private Button MIR_Produtos;
+//
+//	@FXML
+//	private Button MIR_Vendas;
+
 	private Principal principal;
-	
+
 	public void setPrincipal(Principal principal) {
 		this.principal = principal;
 	}
+
+	
+	@FXML
+	public void backoffice_MenuCadastrar(ActionEvent event) {
+		Parent root;
+		Stage stage;
+		try {
+			if (event.getSource() == menuCadastro) {
+				stage = (Stage) menuCadastro.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaDeCadastro.fxml"));
+			} else {
+				stage = (Stage) menuCadastro.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/Backoffice.fxml"));
+			}
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	public void backoffice_MenuMovimentacoes(ActionEvent event) {
+		Parent root;
+		Stage stage;
+		try {
+			if (event.getSource() == menuCadastro) {
+				stage = (Stage) menuCadastro.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministradorTela.fxml"));
+			} else {
+				stage = (Stage) menuCadastro.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/Backoffice.fxml"));
+			}
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	public void backoffice_MenuPDV(ActionEvent event) {
+		Parent root;
+		Stage stage;
+		try {
+			if (event.getSource() == menuCadastro) {
+				stage = (Stage) menuCadastro.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministradorTela.fxml"));
+			} else {
+				stage = (Stage) menuCadastro.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/Backoffice.fxml"));
+			}
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	public void backoffice_MenuFiscal(ActionEvent event) {
+		Parent root;
+		Stage stage;
+		try {
+			if (event.getSource() == menuCadastro) {
+				stage = (Stage) menuCadastro.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaDeCadastro.fxml"));
+			} else {
+				stage = (Stage) menuCadastro.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/Backoffice.fxml"));
+			}
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
-		
+	@FXML
+	public void backoffice_MenuFinanceiro(ActionEvent event) {
+		Parent root;
+		Stage stage;
+		try {
+			if (event.getSource() == menuCadastro) {
+				stage = (Stage) menuCadastro.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministradorTela.fxml"));
+			} else {
+				stage = (Stage) menuCadastro.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/Backoffice.fxml"));
+			}
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
-	
-	
+	@FXML
+	public void backoffice_MenuRelatorios(ActionEvent event) {
+		Parent root;
+		Stage stage;
+		try {
+			if (event.getSource() == menuCadastro) {
+				stage = (Stage) menuCadastro.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministradorTela.fxml"));
+			} else {
+				stage = (Stage) menuCadastro.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/Backoffice.fxml"));
+			}
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

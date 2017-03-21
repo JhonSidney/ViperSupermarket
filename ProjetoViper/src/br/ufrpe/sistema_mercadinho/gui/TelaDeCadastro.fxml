@@ -1,16 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.sistema_mercadinho.gui.CadastroAdministradorController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.sistema_mercadinho.gui.TelaDeCadastroController">
    <children>
-      <AnchorPane prefHeight="402.0" prefWidth="600.0">
+      <AnchorPane prefHeight="600.0" prefWidth="1000.0">
          <children>
-            <Button fx:id="MIC_CA_salvar" layoutX="480.0" layoutY="336.0" mnemonicParsing="false" onDragDetected="" text="Salvar" />
-            <Label fx:id="texto" alignment="CENTER" layoutX="105.0" layoutY="172.0" prefHeight="17.0" prefWidth="460.0" text="tela de cadastro de  administrador , cadastrar,atualizar e remover" />
+            <ImageView fitHeight="623.0" fitWidth="1035.0" layoutX="-10.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@picture/FUNDOMAIOR.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="MBC_CadastrarAdministrador" layoutX="234.0" layoutY="171.0" mnemonicParsing="false" onAction="#cadastrarAdministrador" prefHeight="160.0" prefWidth="260.0" text="ADMINISTRADOR">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="MBC_CadastrarFuncionario" layoutX="516.0" layoutY="171.0" mnemonicParsing="false" onAction="#cadastrarFuncionario" prefHeight="160.0" prefWidth="260.0" text="FUNCIONARIO">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="MBC_CadastrarFornecedor" layoutX="234.0" layoutY="357.0" mnemonicParsing="false" onAction="#cadastrarFornecedor" prefHeight="160.0" prefWidth="260.0" text="FORNECEDOR">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="MBC_CadastrarProduto" layoutX="516.0" layoutY="357.0" mnemonicParsing="false" onAction="#cadastrarProduto" prefHeight="160.0" prefWidth="260.0" text="PRODUTO">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="MBC_VOLTAR" layoutX="870.0" layoutY="567.0" mnemonicParsing="false" onAction="#botaoVoltarMenuCadastrar" prefHeight="25.0" prefWidth="74.0" text="VOLTAR" />
          </children></AnchorPane>
    </children>
 </VBox>

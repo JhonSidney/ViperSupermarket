@@ -10,9 +10,17 @@ import br.ufrpe.sistema_mercadinho.negocio.beans.Fornecedor;
 public class ControladorFornecedor {
 
 	private IRepositorioFornecedor repositorioFornecedor;
+	private static ControladorFornecedor instance;
 
-	public ControladorFornecedor() {
+	private ControladorFornecedor() {
 		this.repositorioFornecedor = RepositorioFornecedor.getInstance();
+	}
+
+	public static ControladorFornecedor getInstance() {
+		if (instance == null) {
+			instance = new ControladorFornecedor();
+		}
+		return instance;
 	}
 
 	public void cadastrar(Fornecedor fornecedor) throws ErroDeNegocioException {

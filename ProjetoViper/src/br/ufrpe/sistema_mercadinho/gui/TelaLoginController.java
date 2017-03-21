@@ -23,6 +23,9 @@ public class TelaLoginController {
 	private PasswordField TL_PF_SenhaLogin;
 	@FXML
 	private Button TL_BT_Acessar;
+	
+//	@FXML
+//	private Label TL_LB_Erro;
 
 	public void setPrincipal(Principal principal) {
 		this.principal = principal;
@@ -33,23 +36,32 @@ public class TelaLoginController {
 	}
 
 	@FXML
-	public void acessarLogin(ActionEvent event) {
-		Parent root;
-		Stage stage;
+	public void acessarLogin(ActionEvent event) throws ErroDeNegocioException {
+
 		try {
-			if (event.getSource() == TL_BT_Acessar) {
+			 if (this.fachada.efetuarLogin(TL_TF_Usuario.getText(), TL_PF_SenhaLogin.getText()) == 1) {
+				Parent root;
+				Stage stage;
+
 				stage = (Stage) TL_BT_Acessar.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/Backoffice.fxml"));
-			} else {
+				Scene scene = new Scene(root);
+				stage.setScene(scene);
+			}else if (this.fachada.efetuarLogin(TL_TF_Usuario.getText(), TL_PF_SenhaLogin.getText()) == -1) {
+				Parent root;
+				Stage stage;
+
 				stage = (Stage) TL_BT_Acessar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaLogins.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/Backoffice.fxml"));
+				Scene scene = new Scene(root);
+				stage.setScene(scene);
+
 			}
-			Scene scene = new Scene(root);
-			stage.setScene(scene);
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 	}
 
 }

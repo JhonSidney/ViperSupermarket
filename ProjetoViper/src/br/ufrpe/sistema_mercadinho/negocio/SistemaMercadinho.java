@@ -22,13 +22,13 @@ public class SistemaMercadinho {
 	private ControladorLogin logins;
 
 	private SistemaMercadinho() {
-		this.administradores = new ControladorAdministrador();
-		this.funcionarios = new ControladorFuncionario();
-		this.fornecedores = new ControladorFornecedor();
-		this.compras = new ControladorCompra();
-		this.itens = new ControladorItem();
-		this.vendas = new ControladorVenda();
-		this.logins = new ControladorLogin();
+		this.administradores =  ControladorAdministrador.getInstance();
+		this.funcionarios =  ControladorFuncionario.getInstance();
+		this.fornecedores =  ControladorFornecedor.getInstance();
+		this.compras =  ControladorCompra.getInstance();
+		this.itens =  ControladorItem.getInstance();
+		this.vendas =  ControladorVenda.getInstance();
+		this.logins =  ControladorLogin.getInstance();
 	}
 
 	public static SistemaMercadinho getInstance() {
@@ -161,7 +161,7 @@ public class SistemaMercadinho {
 		this.vendas.remover(codigoVenda);
 	}
 	
-	public int efetuarLogin(String cpf, String senha) {
+	public int efetuarLogin(String cpf, String senha)throws ErroDeNegocioException {
 		return this.logins.efetuarLogin(cpf, senha);
 	}
 	

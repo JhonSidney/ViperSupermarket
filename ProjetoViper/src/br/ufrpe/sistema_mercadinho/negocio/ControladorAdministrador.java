@@ -9,13 +9,20 @@ import br.ufrpe.sistema_mercadinho.negocio.beans.Administrador;
 
 public class ControladorAdministrador {
 	private IRepositorioAdministrador repositorioAdm;
+	private static ControladorAdministrador instance;
 
-	public ControladorAdministrador() {
+	private ControladorAdministrador() {
 		this.repositorioAdm = RepositorioAdministrador.getInstance();
 	}
 
-	public void cadastrar(Administrador adm)
-			throws ErroDeNegocioException {
+	public static ControladorAdministrador getInstance() {
+		if (instance == null) {
+			instance = new ControladorAdministrador();
+		}
+		return instance;
+	}
+
+	public void cadastrar(Administrador adm) throws ErroDeNegocioException {
 		if (adm != null && !this.existe(adm.getCpf())) {
 			this.repositorioAdm.cadastrar(adm);
 		} else {
@@ -23,22 +30,17 @@ public class ControladorAdministrador {
 		}
 	}
 
-	public void atualizar(Administrador adm)
-			throws ErroDeNegocioException {
+	public void atualizar(Administrador adm) throws ErroDeNegocioException {
 		if (adm != null && this.existe(adm.getCpf())) {
 			this.repositorioAdm.atualizar(adm);
-			
+
 		} else {
 			throw new ErroDeNegocioException("Administrador não Existe !");
 		}
 	}
 
-	public Administrador procurar(String cpf)
-			throws ErroDeNegocioException {
+	public Administrador procurar(String cpf) throws ErroDeNegocioException {
 		Administrador resultado = this.repositorioAdm.procurar(cpf);
-		if (resultado == null) {
-			throw new ErroDeNegocioException("Administrador Não Existe !");
-		}
 		return resultado;
 	}
 

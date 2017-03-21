@@ -10,9 +10,17 @@ import br.ufrpe.sistema_mercadinho.negocio.beans.Compra;
 public class ControladorCompra {
 
 	private IRepositorioCompra repositorioCompra;
-
-	public ControladorCompra() {
+	private static ControladorCompra instance;
+	
+	private ControladorCompra() {
 		this.repositorioCompra = RepositorioCompra.getInstance();
+	}
+	
+	public static ControladorCompra getInstance() {
+		if (instance == null) {
+			instance = new ControladorCompra();
+		}
+		return instance;
 	}
 
 	public void cadastrar(Compra compra) throws ErroDeNegocioException {

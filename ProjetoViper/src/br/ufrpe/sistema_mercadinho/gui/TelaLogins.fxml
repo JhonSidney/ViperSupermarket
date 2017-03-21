@@ -17,9 +17,9 @@
       </ImageView>
       <Pane prefHeight="600.0" prefWidth="1000.0">
          <children>
-            <Button fx:id="TL_BT_Acessar" alignment="CENTER" layoutX="463.0" layoutY="363.0" mnemonicParsing="false" onAction="#acessarLogin" prefHeight="25.0" prefWidth="112.0" text="FAZER LOGIN" />
-            <PasswordField fx:id="TL_PF_SenhaLogin" alignment="CENTER" layoutX="445.0" layoutY="318.0" />
             <TextField fx:id="TL_TF_Usuario" alignment="CENTER" layoutX="445.0" layoutY="252.0" />
+            <PasswordField fx:id="TL_PF_SenhaLogin" alignment="CENTER" layoutX="445.0" layoutY="318.0" />
+            <Button fx:id="TL_BT_Acessar" alignment="CENTER" layoutX="463.0" layoutY="363.0" mnemonicParsing="false" onAction="#acessarLogin" prefHeight="25.0" prefWidth="112.0" text="FAZER LOGIN" />
             <Label alignment="CENTER" layoutX="445.0" layoutY="225.0" prefHeight="17.0" prefWidth="149.0" text="USUARIO">
                <font>
                   <Font name="System Bold" size="12.0" />
