@@ -30,23 +30,7 @@ public class JanelaErroController {
 	
 	@FXML
 	public void botaoOK(ActionEvent event) {
-		Parent root;
-		Stage stage;
-		try {
-			if (event.getSource() == BT_OK) {
-				stage = (Stage) BT_OK.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministradorTela.fxml"));
-			} else {
-				stage = (Stage) BT_OK.getScene().getWindow();
-				root = FXMLLoader.load(
-						getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministradorTela.fxml"));
-			}
-			Scene scene = new Scene(root);
-			stage.setScene(scene);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		
 	}
 	
 	@FXML
