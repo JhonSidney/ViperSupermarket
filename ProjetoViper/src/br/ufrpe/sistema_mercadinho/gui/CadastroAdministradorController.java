@@ -177,29 +177,4 @@ public class CadastroAdministradorController {
 		return validate;
 	}
 
-	@FXML
-	public void limparCampos() {
-
-		CDA_NOME.clear();
-		CDA_CPF.clear();
-		CDA_RG.clear();
-		CDA_DATAEMISSAO.clear();
-		CDA_ORGAOEMISSOR.clear();
-		CDA_SEXO.clear();
-		CDA_EMAIL.clear();
-		CDA_ESTADOCIVIL.clear();
-		CDA_NATURALIDADE.clear();
-		CDA_TELEFONE.clear();
-		CDA_NACIONALIDADE.clear();
-		CDA_SENHA.clear();
-		CDA_LOGRADOURO.clear();
-		CDA_BAIRRO.clear();
-		CDA_CEP.clear();
-		CDA_NUMERO.clear();
-		CDA_COMPLEMENTO.clear();
-		CDA_CIDADE.clear();
-		CDA_ESTADO.clear();
-
-	}
-
 }
