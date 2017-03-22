@@ -156,13 +156,14 @@ public class CadastroAdministradorController {
 					|| CDA_BAIRRO.getText().isEmpty() || CDA_CEP.getText().isEmpty() || CDA_NUMERO.getText().isEmpty()
 					|| CDA_COMPLEMENTO.getText().isEmpty() || CDA_CIDADE.getText().isEmpty()
 					|| CDA_ESTADO.getText().isEmpty()) {
-				FXMLLoader fxmlLoader = new FXMLLoader(
-						getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/JanelaErroTela.fxmll"));
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/JanelaErroTela.fxml"));
 				Parent root1 = (Parent) fxmlLoader.load();
+				JanelaErroController controller = fxmlLoader.getController();
+				((JanelaErroController) controller).setMessagem("Campos invalidos");;
 				Stage stage = new Stage();
 				stage.initModality(Modality.APPLICATION_MODAL);
 				stage.initStyle(StageStyle.UNDECORATED);
-				stage.setTitle("Panela Fit");
+				stage.setTitle("Viper Sistemas");
 				stage.setScene(new Scene(root1));
 				stage.show();
 
