@@ -52,7 +52,7 @@ public class TelaLoginController {
 				Stage stage;
 
 				stage = (Stage) TL_BT_Acessar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/Backoffice.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/FrenteDeCaixaTela.fxml"));
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
 

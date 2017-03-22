@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.sistema_mercadinho.gui.FrenteDeCaixaController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@picture/frentedecaixa.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="155.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="FT_SUBTOTAL" layoutX="569.0" layoutY="300.0" prefHeight="19.0" prefWidth="151.0" text="SUBTOTAL">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="FT_QTD" layoutX="569.0" layoutY="244.0" prefHeight="19.0" prefWidth="151.0" text="QUANTIDADE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="FT_PRODUTOS" layoutX="569.0" layoutY="14.0" prefHeight="19.0" prefWidth="151.0" text="PRODUTOS">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="FT_VALORITEM" layoutX="768.0" layoutY="254.0" prefHeight="19.0" prefWidth="151.0" text="VALOR DO ITEM">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="FT_MENSAGEM" layoutX="148.0" layoutY="554.0" prefHeight="40.0" prefWidth="563.0" text="C A I X A   D I S P ON I V E L">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

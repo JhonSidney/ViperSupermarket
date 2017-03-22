@@ -172,18 +172,18 @@ public class CadastroFuncionarioController {
 					|| CDF_ESTADO.getText().isEmpty() || CDF_FUNCAO.getText().isEmpty()
 					|| CDF_ADMISSAO.getText().isEmpty() || CDF_DEMISSAO.getText().isEmpty()
 					|| CDF_SALARIO.getText().isEmpty()) {
-				FXMLLoader fxmlLoader = new FXMLLoader(
-						getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/JanelaErroTela.fxml"));
-				Parent root1 = (Parent) fxmlLoader.load();
-				JanelaErroController controller = fxmlLoader.getController();
-				((JanelaErroController) controller).setMessagem("Campos invalidos");
-				;
-				Stage stage = new Stage();
-				stage.initModality(Modality.APPLICATION_MODAL);
-				stage.initStyle(StageStyle.UNDECORATED);
-				stage.setTitle("Viper Sistemas");
-				stage.setScene(new Scene(root1));
-				stage.show();
+//				FXMLLoader fxmlLoader = new FXMLLoader(
+//				getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/JanelaErroTela.fxml"));
+//				Parent root1 = (Parent) fxmlLoader.load();
+//				JanelaErroController controller = fxmlLoader.getController();
+//				((JanelaErroController) controller).setMessagem("Campos invalidos");
+//				;
+//				Stage stage = new Stage();
+//				stage.initModality(Modality.APPLICATION_MODAL);
+//				stage.initStyle(StageStyle.UNDECORATED);
+//				stage.setTitle("Viper Sistemas");
+//				stage.setScene(new Scene(root1));
+//				stage.show();
 
 			} else {
 				validate = true;
