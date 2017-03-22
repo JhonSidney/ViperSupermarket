@@ -1,5 +1,10 @@
 package br.ufrpe.sistema_mercadinho.gui;
 
+import java.io.IOException;
+
+import br.ufrpe.sistema_mercadinho.negocio.SistemaMercadinho;
+import br.ufrpe.sistema_mercadinho.negocio.beans.Administrador;
+import br.ufrpe.sistema_mercadinho.negocio.beans.Endereco;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,12 +12,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class CadastroAdministradorController {
 
-	
-	
 	@FXML
 	private TextField CDA_NOME;
 	@FXML
@@ -27,7 +32,7 @@ public class CadastroAdministradorController {
 	private TextField CDA_SEXO;
 	@FXML
 	private TextField CDA_EMAIL;
-	
+
 	@FXML
 	private TextField CDA_ESTADOCIVIL;
 	@FXML
@@ -38,7 +43,7 @@ public class CadastroAdministradorController {
 	private TextField CDA_NACIONALIDADE;
 	@FXML
 	private TextField CDA_SENHA;
-	
+
 	@FXML
 	private TextField CDA_LOGRADOURO;
 	@FXML
@@ -53,34 +58,71 @@ public class CadastroAdministradorController {
 	private TextField CDA_CIDADE;
 	@FXML
 	private TextField CDA_ESTADO;
-	
+
 	@FXML
 	private Button CDA_CONFIRMAR;
 	@FXML
-	private TextField CDA_CANCELAR;
+	private Button CDA_CANCELAR;
 
+	SistemaMercadinho fachada;
 	
+	@FXML
+	public void initialize(){
+		fachada = SistemaMercadinho.getInstance();
+	}
 	
 	
 	@FXML
-	public void botaoConfirmarCadastroAdministrador(ActionEvent event) {
+	public void botaoConfirmarCadastroAdministrador(ActionEvent event) throws IOException {
+
 		Parent root;
 		Stage stage;
-		try {
-			if (event.getSource() == CDA_CONFIRMAR) {
-				stage = (Stage) CDA_CONFIRMAR.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaCadastro.fxml"));
-			} else {
-				stage = (Stage) CDA_CONFIRMAR.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministradorTela.fxml"));
-			}
-			Scene scene = new Scene(root);
-			stage.setScene(scene);
 
-		} catch (Exception e) {
-			e.printStackTrace();
+		if (validarCampos()) {
+
+			try {
+
+				String nome, cpf, telefone, rg, dataEmissao, orgaoEmissao, sexo, email, estadoCivil, naturalidade,
+						nacionalidade, senha, logradouro, bairro, cep, numero, complemento, cidade, estado;
+
+				nome = CDA_NOME.getText();
+				cpf = CDA_CPF.getText();
+				telefone = CDA_TELEFONE.getText();
+				rg = CDA_RG.getText();
+				dataEmissao = CDA_DATAEMISSAO.getText();
+				orgaoEmissao = CDA_ORGAOEMISSOR.getText();
+				sexo = CDA_SEXO.getText();
+				email = CDA_EMAIL.getText();
+				estadoCivil = CDA_ESTADOCIVIL.getText();
+				naturalidade = CDA_NATURALIDADE.getText();
+				nacionalidade = CDA_NACIONALIDADE.getText();
+				senha = CDA_SENHA.getText();
+				logradouro = CDA_LOGRADOURO.getText();
+				bairro = CDA_BAIRRO.getText();
+				cep = CDA_CEP.getText();
+				numero = CDA_NUMERO.getText();
+				complemento = CDA_COMPLEMENTO.getText();
+				cidade = CDA_CIDADE.getText();
+				estado = CDA_ESTADO.getText();
+				Endereco endereco = new Endereco(logradouro, bairro, cep, numero, complemento, cidade, estado);
+				Administrador administrador = new Administrador(telefone, email, endereco, nome, cpf, rg, dataEmissao,
+						orgaoEmissao, sexo, estadoCivil, nacionalidade, naturalidade, senha);
+				
+				fachada.cadastrarAdministrador(administrador);
+
+				
+					stage = (Stage) CDA_CONFIRMAR.getScene().getWindow();
+					root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministradorTela.fxml"));
+
+				Scene scene = new Scene(root);
+				stage.setScene(scene);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
+
 	@FXML
 	public void botaoCancelarCadastroAdministrador(ActionEvent event) {
 		Parent root;
@@ -88,10 +130,11 @@ public class CadastroAdministradorController {
 		try {
 			if (event.getSource() == CDA_CANCELAR) {
 				stage = (Stage) CDA_CANCELAR.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaCadastro.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/Backoffice.fxml"));
 			} else {
 				stage = (Stage) CDA_CANCELAR.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministradorTela.fxml"));
+				root = FXMLLoader.load(
+						getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministradorTela.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -100,6 +143,62 @@ public class CadastroAdministradorController {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+	private boolean validarCampos() throws IOException {
+		boolean validate = false;
+		try {
+			if (CDA_NOME.getText().isEmpty() || CDA_CPF.getText().isEmpty() || CDA_RG.getText().isEmpty()
+					|| CDA_DATAEMISSAO.getText().isEmpty() || CDA_ORGAOEMISSOR.getText().isEmpty()
+					|| CDA_SEXO.getText().isEmpty() || CDA_EMAIL.getText().isEmpty()
+					|| CDA_ESTADOCIVIL.getText().isEmpty() || CDA_NATURALIDADE.getText().isEmpty()
+					|| CDA_TELEFONE.getText().isEmpty() || CDA_NACIONALIDADE.getText().isEmpty()
+					|| CDA_SENHA.getText().isEmpty() || CDA_LOGRADOURO.getText().isEmpty()
+					|| CDA_BAIRRO.getText().isEmpty() || CDA_CEP.getText().isEmpty() || CDA_NUMERO.getText().isEmpty()
+					|| CDA_COMPLEMENTO.getText().isEmpty() || CDA_CIDADE.getText().isEmpty()
+					|| CDA_ESTADO.getText().isEmpty()) {
+				FXMLLoader fxmlLoader = new FXMLLoader(
+						getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/JanelaErroTela.fxmll"));
+				Parent root1 = (Parent) fxmlLoader.load();
+				Stage stage = new Stage();
+				stage.initModality(Modality.APPLICATION_MODAL);
+				stage.initStyle(StageStyle.UNDECORATED);
+				stage.setTitle("Panela Fit");
+				stage.setScene(new Scene(root1));
+				stage.show();
+
+			} else {
+				validate = true;
+			}
+		} catch (NumberFormatException e) {
+			e.getMessage();
+
+		}
+		return validate;
+	}
+
+	@FXML
+	public void limparCampos() {
+
+		CDA_NOME.clear();
+		CDA_CPF.clear();
+		CDA_RG.clear();
+		CDA_DATAEMISSAO.clear();
+		CDA_ORGAOEMISSOR.clear();
+		CDA_SEXO.clear();
+		CDA_EMAIL.clear();
+		CDA_ESTADOCIVIL.clear();
+		CDA_NATURALIDADE.clear();
+		CDA_TELEFONE.clear();
+		CDA_NACIONALIDADE.clear();
+		CDA_SENHA.clear();
+		CDA_LOGRADOURO.clear();
+		CDA_BAIRRO.clear();
+		CDA_CEP.clear();
+		CDA_NUMERO.clear();
+		CDA_COMPLEMENTO.clear();
+		CDA_CIDADE.clear();
+		CDA_ESTADO.clear();
+
+	}
+
 }
