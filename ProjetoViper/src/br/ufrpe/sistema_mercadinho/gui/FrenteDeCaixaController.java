@@ -16,4 +16,7 @@ public class FrenteDeCaixaController {
 	@FXML
 	private Label FT_MENSAGEM;
 	
+	
+	
+	
 }
