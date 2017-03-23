@@ -16,7 +16,7 @@
       </ImageView>
       <AnchorPane layoutX="74.0" layoutY="1.0" prefHeight="614.0" prefWidth="925.0">
          <children>
-            <ImageView fitHeight="598.0" fitWidth="843.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="587.0" fitWidth="857.0" layoutX="-5.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@picture/fundoBranco.jpg" />
                </image>
@@ -128,10 +128,11 @@
                   <Font size="10.0" />
                </font>
             </Label>
-            <Button fx:id="CDFOR_CADASTRAR" layoutX="212.0" layoutY="556.0" mnemonicParsing="false" onAction="botaoCadastrarCadastroFornecedor" prefHeight="20.0" prefWidth="95.0" text="CADASTRAR" />
-            <Button fx:id="CDFOR_ALTERAR" layoutX="321.0" layoutY="556.0" mnemonicParsing="false" onAction="#botaoAlterarCadastroFornecedor" prefHeight="20.0" prefWidth="95.0" text="ALTERAR" />
-            <Button fx:id="CDFOR_REMOVER" layoutX="430.0" layoutY="556.0" mnemonicParsing="false" onAction="#botaoRemoverCadastroFornecedor" onDragDetected="#botaoRemoverCadastroFornecedor" prefHeight="20.0" prefWidth="95.0" text="REMOVER" />
-            <Button fx:id="CDFOR_CANCELAR" layoutX="709.0" layoutY="556.0" mnemonicParsing="false" onAction="#botaoCancelarCadastroFornecedor" prefHeight="20.0" prefWidth="95.0" text="CANCELAR" />
+            <Button fx:id="CDFOR_CADASTRAR" layoutX="141.0" layoutY="556.0" mnemonicParsing="false" onAction="#cadastrarCadastroFornecedor" prefHeight="20.0" prefWidth="95.0" text="CADASTRAR" />
+            <Button fx:id="CDFOR_ALTERAR" layoutX="280.0" layoutY="556.0" mnemonicParsing="false" onAction="#alterarCadastroFornecedor" prefHeight="20.0" prefWidth="95.0" text="ALTERAR" />
+            <Button fx:id="CDFOR_REMOVER" layoutX="407.0" layoutY="556.0" mnemonicParsing="false" onAction="#removerCadastroFornecedor" prefHeight="20.0" prefWidth="95.0" text="REMOVER" />
+            <Button fx:id="CDFOR_CANCELAR" layoutX="730.0" layoutY="556.0" mnemonicParsing="false" onAction="#cancelarCadastroFornecedor" prefHeight="20.0" prefWidth="95.0" text="CANCELAR" />
+            <Button fx:id="CDFOR_BUSCAR" layoutX="536.0" layoutY="556.0" mnemonicParsing="false" onAction="#buscarCadastroFornecedor" prefHeight="20.0" prefWidth="95.0" text="BUSCAR" />
          </children>
       </AnchorPane>
    </children>

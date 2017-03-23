@@ -67,6 +67,8 @@ public class CadastroAdministradorController {
 	private Button CDA_REMOVER;
 	@FXML
 	private Button CDA_CANCELAR;
+	@FXML
+	private Button CDA_BUSCAR;
 
 	SistemaMercadinho fachada;
 
@@ -76,7 +78,7 @@ public class CadastroAdministradorController {
 	}
 
 	@FXML
-	public void botaoCadastrarCadastroAdministrador(ActionEvent event) throws IOException {
+	public void cadastrarCadastroAdministrador(ActionEvent event) throws IOException {
 
 		Parent root;
 		Stage stage;
@@ -127,23 +129,28 @@ public class CadastroAdministradorController {
 	}
 
 	@FXML
-	public void botaoAlterarCadastroAdministrador(ActionEvent event) throws IOException {
+	public void alterarCadastroAdministrador(ActionEvent event) throws IOException {
 
 	}
 
 	@FXML
-	public void botaoRemoverCadastroAdministrador(ActionEvent event) throws IOException {
+	public void removerCadastroAdministrador(ActionEvent event) throws IOException {
 
+	}
+	
+	@FXML
+	public void buscarCadastrarAdministrador(ActionEvent event)throws IOException{
+		
 	}
 
 	@FXML
-	public void botaoCancelarCadastroAdministrador(ActionEvent event) {
+	public void cancelarCadastroAdministrador(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {
 			if (event.getSource() == CDA_CANCELAR) {
 				stage = (Stage) CDA_CANCELAR.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/Backoffice.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaDeCadastro.fxml"));
 			} else {
 				stage = (Stage) CDA_CANCELAR.getScene().getWindow();
 				root = FXMLLoader.load(

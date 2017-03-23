@@ -76,6 +76,9 @@ public class CadastroFuncionarioController {
 	private Button CDF_REMOVER;
 	@FXML
 	private Button CDF_CANCELAR;
+	@FXML
+	private Button CDF_BUSCAR;
+	
 
 	SistemaMercadinho fachada;
 
@@ -85,7 +88,7 @@ public class CadastroFuncionarioController {
 	}
 
 	@FXML
-	public void botaoCadastrarCadastroFuncionario(ActionEvent event) throws IOException {
+	public void cadastrarCadastroFuncionario(ActionEvent event) throws IOException {
 
 		Parent root;
 		Stage stage;
@@ -144,24 +147,27 @@ public class CadastroFuncionarioController {
 	
 	
 	@FXML
-	public void botaoAlterarCadastroFuncionario(ActionEvent event)throws IOException{
+	public void alterarCadastroFuncionario(ActionEvent event)throws IOException{
 		
 		
 		
 	}
 	
 	@FXML
-	public void botaoRemoverCadastroFuncionario(ActionEvent event)throws IOException{
+	public void removerCadastroFuncionario(ActionEvent event)throws IOException{
 		
 		
 		
 	}
 	
-	
+	@FXML
+	private void buscarCadastroFuncionario(ActionEvent event)throws IOException{
+		
+	}
 	
 	
 	@FXML
-	public void botaoCancelarCadastroFuncionario(ActionEvent event) {
+	public void cancelarCadastroFuncionario(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {
@@ -203,6 +209,7 @@ public class CadastroFuncionarioController {
 					|| CDF_ESTADO.getText().isEmpty() || CDF_FUNCAO.getText().isEmpty()
 					|| CDF_ADMISSAO.getText().isEmpty() || CDF_DEMISSAO.getText().isEmpty()
 					|| CDF_SALARIO.getText().isEmpty()) {
+				
 //				FXMLLoader fxmlLoader = new FXMLLoader(
 //				getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/JanelaErroTela.fxml"));
 //				Parent root1 = (Parent) fxmlLoader.load();

@@ -47,6 +47,8 @@ public class CadastroFornecedorController {
 	private Button CDFOR_REMOVER;
 	@FXML
 	private Button CDFOR_CANCELAR;
+	@FXML
+	private Button CDFOR_BUSCAR;
 
 	SistemaMercadinho fachada;
 
@@ -56,7 +58,7 @@ public class CadastroFornecedorController {
 	}
 
 	@FXML
-	public void botaoCadastrarCadastroFornecedor(ActiveEvent event) throws IOException {
+	public void cadastrarCadastroFornecedor(ActionEvent event) throws IOException {
 		Parent root;
 		Stage stage;
 
@@ -97,17 +99,22 @@ public class CadastroFornecedorController {
 	}
 
 	@FXML
-	public void botaoAlterarCadastroFornecedor(ActionEvent event) throws IOException {
+	public void alterarCadastroFornecedor(ActionEvent event) throws IOException {
 
 	}
 
 	@FXML
-	public void botaoRemoverCadastroFornecedor(ActionEvent event) throws IOException {
+	public void removerCadastroFornecedor(ActionEvent event) throws IOException {
 
+	}
+	
+	@FXML
+	public void buscarCadastroFornecedor(ActionEvent event)throws IOException{
+		
 	}
 
 	@FXML
-	public void botaoCancelarCadastroFornecedor(ActionEvent event) {
+	public void cancelarCadastroFornecedor(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {

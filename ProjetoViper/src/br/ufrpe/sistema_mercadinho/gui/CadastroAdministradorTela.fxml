@@ -194,10 +194,11 @@
                   <Font size="10.0" />
                </font>
             </Label>
-            <Button fx:id="CDA_CADASTRAR" layoutX="236.0" layoutY="550.0" mnemonicParsing="false" onAction="#botaoCadastrarCadastroAdministrador" prefHeight="20.0" prefWidth="95.0" text="CADASTRAR" />
-            <Button fx:id="CDA_ALTERAR" layoutX="358.0" layoutY="549.0" mnemonicParsing="false" onAction="#botaoAlterarCadastroAdministrador" prefHeight="20.0" prefWidth="95.0" text="ALTERAR" />
-            <Button fx:id="CDA_REMOVER" layoutX="481.0" layoutY="548.0" mnemonicParsing="false" onAction="#botaoRemoverCadastroAdministrador" prefHeight="20.0" prefWidth="95.0" text="REMOVER" />
-            <Button fx:id="CDA_CANCELAR" layoutX="717.0" layoutY="550.0" mnemonicParsing="false" onAction="#botaoCancelarCadastroAdministrador" prefHeight="20.0" prefWidth="95.0" text="CANCELAR" />
+            <Button fx:id="CDA_CADASTRAR" layoutX="125.0" layoutY="548.0" mnemonicParsing="false" onAction="#cadastrarCadastroAdministrador" prefHeight="20.0" prefWidth="95.0" text="CADASTRAR" />
+            <Button fx:id="CDA_ALTERAR" layoutX="248.0" layoutY="548.0" mnemonicParsing="false" onAction="#alterarCadastroAdministrador" prefHeight="20.0" prefWidth="95.0" text="ALTERAR" />
+            <Button fx:id="CDA_REMOVER" layoutX="374.0" layoutY="548.0" mnemonicParsing="false" onAction="#removerCadastroAdministrador" prefHeight="20.0" prefWidth="95.0" text="REMOVER" />
+            <Button fx:id="CDA_CANCELAR" layoutX="717.0" layoutY="550.0" mnemonicParsing="false" onAction="#cancelarCadastroAdministrador" prefHeight="20.0" prefWidth="95.0" text="CANCELAR" />
+            <Button fx:id="CDA_BUSCAR" layoutX="502.0" layoutY="548.0" mnemonicParsing="false" onAction="#buscarCadastrarAdministrador" prefHeight="20.0" prefWidth="95.0" text="BUSCAR" />
          </children>
       </AnchorPane>
    </children>
