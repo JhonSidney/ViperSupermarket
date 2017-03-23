@@ -16,7 +16,7 @@
       </ImageView>
       <AnchorPane layoutX="82.0" layoutY="15.0" prefHeight="572.0" prefWidth="900.0">
          <children>
-            <ImageView fitHeight="572.0" fitWidth="900.0" layoutX="-33.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="583.0" fitWidth="864.0" layoutX="-9.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@picture/fundoBranco.jpg" />
                </image>
@@ -36,20 +36,14 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField fx:id="CDA_CPF" prefHeight="25.0" prefWidth="145.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField fx:id="CDA_NOME" prefHeight="25.0" prefWidth="161.0" GridPane.columnIndex="1" />
-                  <TextField fx:id="CDA_RG" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField fx:id="CDA_DATAEMISSAO" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField fx:id="CDA_SEXO" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <TextField fx:id="CDA_EMAIL" prefHeight="25.0" prefWidth="277.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                   <Label alignment="BASELINE_LEFT" graphicTextGap="7.0" prefHeight="20.0" prefWidth="135.0" text="Nome ">
                      <font>
-                        <Font size="14.0" />
+                        <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
                   <Label alignment="CENTER" graphicTextGap="7.0" text="CPF" GridPane.rowIndex="1">
                      <font>
-                        <Font size="14.0" />
+                        <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
                   <Label alignment="BASELINE_LEFT" graphicTextGap="7.0" prefHeight="20.0" prefWidth="117.0" text="RG" GridPane.rowIndex="2">
@@ -77,21 +71,22 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
+                  <TextField fx:id="CDA_NOME" GridPane.columnIndex="1" />
+                  <TextField fx:id="CDA_CPF" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="CDA_RG" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="CDA_DATAEMISSAO" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <TextField fx:id="CDA_ORGAOEMISSOR" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="CDA_SEXO" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="CDA_EMAIL" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                </children>
             </GridPane>
-            <Button fx:id="CDA_CONFIRMAR" layoutX="186.0" layoutY="536.0" mnemonicParsing="false" onAction="#botaoConfirmarCadastroAdministrador" prefHeight="25.0" prefWidth="117.0" text="CONFIRMAR" />
-            <Button fx:id="CDA_CANCELAR" layoutX="355.0" layoutY="536.0" mnemonicParsing="false" onAction="#botaoCancelarCadastroAdministrador" prefHeight="25.0" prefWidth="117.0" text="CANCELAR" />
             <Label layoutX="29.0" layoutY="-2.0" prefHeight="25.0" prefWidth="274.0" text="CADASTRO ADMINISTRADOR">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
-            <GridPane layoutX="404.0" layoutY="94.0" prefHeight="149.0" prefWidth="341.0">
+            <GridPane layoutX="404.0" layoutY="71.0" prefHeight="142.0" prefWidth="337.0">
                <children>
-                  <TextField fx:id="CDA_ESTADOCIVIL" GridPane.columnIndex="1" />
-                  <TextField fx:id="CDA_NATURALIDADE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField fx:id="CDA_TELEFONE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <Label alignment="BASELINE_LEFT" graphicTextGap="7.0" prefHeight="20.0" prefWidth="139.0" text="Naturalidade" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
@@ -117,6 +112,9 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
+                  <TextField fx:id="CDA_ESTADOCIVIL" GridPane.columnIndex="1" />
+                  <TextField fx:id="CDA_NATURALIDADE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="CDA_TELEFONE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField fx:id="CDA_NACIONALIDADE" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <TextField fx:id="CDA_SENHA" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                </children>
@@ -134,16 +132,11 @@
             </GridPane>
             <GridPane layoutX="11.0" layoutY="299.0" prefHeight="189.0" prefWidth="376.0">
                <children>
-                  <TextField fx:id="CDA_BAIRRO" prefHeight="25.0" prefWidth="145.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField fx:id="CDA_LOGRADOURO" prefHeight="25.0" prefWidth="161.0" GridPane.columnIndex="1" />
-                  <TextField fx:id="CDA_CEP" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField fx:id="CDA_NUMERO" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Label alignment="BASELINE_LEFT" graphicTextGap="7.0" prefHeight="26.0" prefWidth="123.0" text="Logradouro">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="CDA_COMPLEMENTO" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <Label alignment="BASELINE_LEFT" graphicTextGap="7.0" prefHeight="26.0" prefWidth="123.0" text="Bairro" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
@@ -169,13 +162,18 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="CDA_CIDADE" prefHeight="36.0" prefWidth="270.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <TextField fx:id="CDA_ESTADO" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                   <Label alignment="BASELINE_LEFT" graphicTextGap="7.0" prefHeight="26.0" prefWidth="123.0" text="Estado" GridPane.rowIndex="6">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
+                  <TextField fx:id="CDA_LOGRADOURO" GridPane.columnIndex="1" />
+                  <TextField fx:id="CDA_BAIRRO" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="CDA_CEP" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="CDA_NUMERO" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="CDA_COMPLEMENTO" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="CDA_CIDADE" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="CDA_ESTADO" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                </children>
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="106.0" />
@@ -196,6 +194,10 @@
                   <Font size="10.0" />
                </font>
             </Label>
+            <Button fx:id="CDA_CADASTRAR" layoutX="236.0" layoutY="550.0" mnemonicParsing="false" onAction="#botaoCadastrarCadastroAdministrador" prefHeight="20.0" prefWidth="95.0" text="CADASTRAR" />
+            <Button fx:id="CDA_ALTERAR" layoutX="358.0" layoutY="549.0" mnemonicParsing="false" onAction="#botaoAlterarCadastroAdministrador" prefHeight="20.0" prefWidth="95.0" text="ALTERAR" />
+            <Button fx:id="CDA_REMOVER" layoutX="481.0" layoutY="548.0" mnemonicParsing="false" onAction="#botaoRemoverCadastroAdministrador" prefHeight="20.0" prefWidth="95.0" text="REMOVER" />
+            <Button fx:id="CDA_CANCELAR" layoutX="717.0" layoutY="550.0" mnemonicParsing="false" onAction="#botaoCancelarCadastroAdministrador" prefHeight="20.0" prefWidth="95.0" text="CANCELAR" />
          </children>
       </AnchorPane>
    </children>

@@ -69,7 +69,11 @@ public class CadastroFuncionarioController {
 	private TextField CDF_SALARIO;
 
 	@FXML
-	private Button CDF_CONFIRMAR;
+	private Button CDF_CADASTRAR;
+	@FXML
+	private Button CDF_ALTERAR;
+	@FXML
+	private Button CDF_REMOVER;
 	@FXML
 	private Button CDF_CANCELAR;
 
@@ -81,7 +85,7 @@ public class CadastroFuncionarioController {
 	}
 
 	@FXML
-	public void confirmarCadastroFuncionario(ActionEvent event) throws IOException {
+	public void botaoCadastrarCadastroFuncionario(ActionEvent event) throws IOException {
 
 		Parent root;
 		Stage stage;
@@ -124,7 +128,7 @@ public class CadastroFuncionarioController {
 
 				fachada.cadastrarFuncionario(funcionario);
 
-				stage = (Stage) CDF_CONFIRMAR.getScene().getWindow();
+				stage = (Stage) CDF_CADASTRAR.getScene().getWindow();
 				root = FXMLLoader
 						.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroFuncionarioTela.fxml"));
 
@@ -137,6 +141,25 @@ public class CadastroFuncionarioController {
 		}
 	}
 
+	
+	
+	@FXML
+	public void botaoAlterarCadastroFuncionario(ActionEvent event)throws IOException{
+		
+		
+		
+	}
+	
+	@FXML
+	public void botaoRemoverCadastroFuncionario(ActionEvent event)throws IOException{
+		
+		
+		
+	}
+	
+	
+	
+	
 	@FXML
 	public void botaoCancelarCadastroFuncionario(ActionEvent event) {
 		Parent root;
@@ -144,7 +167,7 @@ public class CadastroFuncionarioController {
 		try {
 			if (event.getSource() == CDF_CANCELAR) {
 				stage = (Stage) CDF_CANCELAR.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/Backoffice.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaDeCadastro.fxml"));
 			} else {
 				stage = (Stage) CDF_CANCELAR.getScene().getWindow();
 				root = FXMLLoader
@@ -158,6 +181,14 @@ public class CadastroFuncionarioController {
 		}
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
 	private boolean validarCampos() throws IOException {
 		boolean validate = false;
 		try {

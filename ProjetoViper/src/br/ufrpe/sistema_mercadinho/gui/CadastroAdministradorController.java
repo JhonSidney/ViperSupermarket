@@ -60,20 +60,23 @@ public class CadastroAdministradorController {
 	private TextField CDA_ESTADO;
 
 	@FXML
-	private Button CDA_CONFIRMAR;
+	private Button CDA_CADASTRAR;
+	@FXML
+	private Button CDA_ALTERAR;
+	@FXML
+	private Button CDA_REMOVER;
 	@FXML
 	private Button CDA_CANCELAR;
 
 	SistemaMercadinho fachada;
-	
+
 	@FXML
-	public void initialize(){
+	public void initialize() {
 		fachada = SistemaMercadinho.getInstance();
 	}
-	
-	
+
 	@FXML
-	public void botaoConfirmarCadastroAdministrador(ActionEvent event) throws IOException {
+	public void botaoCadastrarCadastroAdministrador(ActionEvent event) throws IOException {
 
 		Parent root;
 		Stage stage;
@@ -107,12 +110,12 @@ public class CadastroAdministradorController {
 				Endereco endereco = new Endereco(logradouro, bairro, cep, numero, complemento, cidade, estado);
 				Administrador administrador = new Administrador(telefone, email, endereco, nome, cpf, rg, dataEmissao,
 						orgaoEmissao, sexo, estadoCivil, nacionalidade, naturalidade, senha);
-				
+
 				fachada.cadastrarAdministrador(administrador);
 
-				
-					stage = (Stage) CDA_CONFIRMAR.getScene().getWindow();
-					root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministradorTela.fxml"));
+				stage = (Stage) CDA_CADASTRAR.getScene().getWindow();
+				root = FXMLLoader.load(
+						getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministradorTela.fxml"));
 
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
@@ -121,6 +124,16 @@ public class CadastroAdministradorController {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	@FXML
+	public void botaoAlterarCadastroAdministrador(ActionEvent event) throws IOException {
+
+	}
+
+	@FXML
+	public void botaoRemoverCadastroAdministrador(ActionEvent event) throws IOException {
+
 	}
 
 	@FXML
@@ -156,16 +169,18 @@ public class CadastroAdministradorController {
 					|| CDA_BAIRRO.getText().isEmpty() || CDA_CEP.getText().isEmpty() || CDA_NUMERO.getText().isEmpty()
 					|| CDA_COMPLEMENTO.getText().isEmpty() || CDA_CIDADE.getText().isEmpty()
 					|| CDA_ESTADO.getText().isEmpty()) {
-				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/JanelaErroTela.fxml"));
-				Parent root1 = (Parent) fxmlLoader.load();
-				JanelaErroController controller = fxmlLoader.getController();
-				((JanelaErroController) controller).setMessagem("Campos invalidos");;
-				Stage stage = new Stage();
-				stage.initModality(Modality.APPLICATION_MODAL);
-				stage.initStyle(StageStyle.UNDECORATED);
-				stage.setTitle("Viper Sistemas");
-				stage.setScene(new Scene(root1));
-				stage.show();
+//				FXMLLoader fxmlLoader = new FXMLLoader(
+//						getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/JanelaErroTela.fxml"));
+//				Parent root1 = (Parent) fxmlLoader.load();
+//				JanelaErroController controller = fxmlLoader.getController();
+//				((JanelaErroController) controller).setMessagem("Campos invalidos");
+//				;
+//				Stage stage = new Stage();
+//				stage.initModality(Modality.APPLICATION_MODAL);
+//				stage.initStyle(StageStyle.UNDECORATED);
+//				stage.setTitle("Viper Sistemas");
+//				stage.setScene(new Scene(root1));
+//				stage.show();
 
 			} else {
 				validate = true;
@@ -176,7 +191,5 @@ public class CadastroAdministradorController {
 		}
 		return validate;
 	}
-
-	
 
 }
