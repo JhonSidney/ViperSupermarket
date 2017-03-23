@@ -100,7 +100,7 @@ public class CadastroProdutoController {
 	}
 
 	@FXML
-	public void atualizarCadastroProduto(ActionEvent event) throws IOException {
+	public void alterarCadastroProduto(ActionEvent event) throws IOException {
 
 	}
 

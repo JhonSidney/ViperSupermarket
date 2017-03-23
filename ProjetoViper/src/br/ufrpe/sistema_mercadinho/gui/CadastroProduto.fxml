@@ -43,10 +43,10 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="CDFOR_NOMEFANTASIA" alignment="BASELINE_LEFT" GridPane.columnIndex="1" />
-                  <TextField fx:id="CDFOR_RAZAOSOCIAL" alignment="BASELINE_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField fx:id="CDFOR_CNPJ" alignment="BASELINE_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField fx:id="CDFOR_INSCRICAOESTADUAL" alignment="BASELINE_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="CDPRO_CODIGOPRODUTO" alignment="BASELINE_LEFT" GridPane.columnIndex="1" />
+                  <TextField fx:id="CDPRO_NOMEPRODUTO" alignment="BASELINE_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="CDPRO_QUANTIDADE" alignment="BASELINE_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="CDPRO_DESCRICAO" alignment="BASELINE_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="10.0" prefWidth="130.0" />
@@ -81,9 +81,9 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="CDFOR_LOGRADOURO" alignment="BASELINE_LEFT" GridPane.columnIndex="1" />
-                  <TextField fx:id="CDFOR_BAIRRO" alignment="BASELINE_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField fx:id="CDFOR_CEP" alignment="BASELINE_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="CDPRO_PRECODECUSTO" alignment="BASELINE_LEFT" GridPane.columnIndex="1" />
+                  <TextField fx:id="CDPRO_PRECODEVENDA" alignment="BASELINE_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="CDPRO_PESODOPRODUTO" alignment="BASELINE_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="131.0" />
@@ -100,11 +100,11 @@
                   <Font size="10.0" />
                </font>
             </Label>
-            <Button layoutX="145.0" layoutY="557.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="95.0" text="CADASTRAR" />
-            <Button layoutX="274.0" layoutY="557.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="95.0" text="ALTERAR" />
-            <Button layoutX="406.0" layoutY="557.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="95.0" text="REMOVER" />
-            <Button layoutX="536.0" layoutY="557.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="95.0" text="BUSCAR" />
-            <Button layoutX="737.0" layoutY="557.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="95.0" text="CANCELAR" />
+            <Button layoutX="145.0" layoutY="557.0" mnemonicParsing="false" onAction="#cadastrarCadastroProduto" prefHeight="20.0" prefWidth="95.0" text="CADASTRAR" />
+            <Button layoutX="274.0" layoutY="557.0" mnemonicParsing="false" onAction="#alterarCadastroProduto" prefHeight="20.0" prefWidth="95.0" text="ALTERAR" />
+            <Button layoutX="406.0" layoutY="557.0" mnemonicParsing="false" onAction="#removerCadastroProduto" prefHeight="20.0" prefWidth="95.0" text="REMOVER" />
+            <Button layoutX="536.0" layoutY="557.0" mnemonicParsing="false" onAction="#buscarCadastroProduto" prefHeight="20.0" prefWidth="95.0" text="BUSCAR" />
+            <Button layoutX="737.0" layoutY="557.0" mnemonicParsing="false" onAction="#cancelarCadastroProduto" prefHeight="20.0" prefWidth="95.0" text="CANCELAR" />
          </children>
       </AnchorPane>
    </children>
