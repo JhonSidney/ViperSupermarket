@@ -10,11 +10,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class CadastroAdministradorController {
 
@@ -89,7 +89,6 @@ public class CadastroAdministradorController {
 
 				String nome, cpf, telefone, rg, dataEmissao, orgaoEmissao, sexo, email, estadoCivil, naturalidade,
 						nacionalidade, senha, logradouro, bairro, cep, numero, complemento, cidade, estado;
-
 				nome = CDA_NOME.getText();
 				cpf = CDA_CPF.getText();
 				telefone = CDA_TELEFONE.getText();
@@ -117,13 +116,17 @@ public class CadastroAdministradorController {
 
 				stage = (Stage) CDA_CADASTRAR.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministradorTela.fxml"));
+				getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministrador.fxml"));
 
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
 
 			} catch (Exception e) {
-				e.printStackTrace();
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Error");
+				alert.setHeaderText("Formato dos campos invalidos");
+				alert.setContentText(e.getMessage());
+				alert.showAndWait();
 			}
 		}
 	}
@@ -137,10 +140,10 @@ public class CadastroAdministradorController {
 	public void removerCadastroAdministrador(ActionEvent event) throws IOException {
 
 	}
-	
+
 	@FXML
-	public void buscarCadastrarAdministrador(ActionEvent event)throws IOException{
-		
+	public void buscarCadastrarAdministrador(ActionEvent event) throws IOException {
+
 	}
 
 	@FXML
@@ -154,7 +157,7 @@ public class CadastroAdministradorController {
 			} else {
 				stage = (Stage) CDA_CANCELAR.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministradorTela.fxml"));
+						getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministrador.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -176,24 +179,22 @@ public class CadastroAdministradorController {
 					|| CDA_BAIRRO.getText().isEmpty() || CDA_CEP.getText().isEmpty() || CDA_NUMERO.getText().isEmpty()
 					|| CDA_COMPLEMENTO.getText().isEmpty() || CDA_CIDADE.getText().isEmpty()
 					|| CDA_ESTADO.getText().isEmpty()) {
-//				FXMLLoader fxmlLoader = new FXMLLoader(
-//						getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/JanelaErroTela.fxml"));
-//				Parent root1 = (Parent) fxmlLoader.load();
-//				JanelaErroController controller = fxmlLoader.getController();
-//				((JanelaErroController) controller).setMessagem("Campos invalidos");
-//				;
-//				Stage stage = new Stage();
-//				stage.initModality(Modality.APPLICATION_MODAL);
-//				stage.initStyle(StageStyle.UNDECORATED);
-//				stage.setTitle("Viper Sistemas");
-//				stage.setScene(new Scene(root1));
-//				stage.show();
-
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Error");
+				alert.setHeaderText("Informações inválidas");
+				alert.setContentText("Verifique os campos digitados!");
+				alert.showAndWait();
+				
+			
 			} else {
 				validate = true;
 			}
 		} catch (NumberFormatException e) {
-			e.getMessage();
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Error");
+			alert.setHeaderText("Formato dos campos invalidos");
+			alert.setContentText("Verifique os campos digitados!");
+			alert.showAndWait();
 
 		}
 		return validate;

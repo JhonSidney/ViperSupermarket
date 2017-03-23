@@ -11,8 +11,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class CadastroFornecedorController {
@@ -86,13 +88,17 @@ public class CadastroFornecedorController {
 
 				stage = (Stage) CDFOR_CADASTRAR.getScene().getWindow();
 				root = FXMLLoader
-						.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroFornecedorTela.fxml"));
+						.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroFornecedor.fxml"));
 
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
 
 			} catch (Exception e) {
-				e.printStackTrace();
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Error");
+				alert.setHeaderText("Informações inválidas");
+				alert.setContentText(e.getMessage());
+				alert.showAndWait();
 			}
 		}
 
@@ -123,7 +129,7 @@ public class CadastroFornecedorController {
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaDeCadastro.fxml"));
 			} else {
 				stage = (Stage) CDFOR_CANCELAR.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroFornecedor.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -142,25 +148,21 @@ public class CadastroFornecedorController {
 					|| CDFOR_CEP.getText().isEmpty() || CDFOR_NUMERO.getText().isEmpty()
 					|| CDFOR_COMPLEMENTO.getText().isEmpty() || CDFOR_CIDADE.getText().isEmpty()
 					|| CDFOR_ESTADO.getText().isEmpty()) {
-				// FXMLLoader fxmlLoader = new FXMLLoader(
-				// getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/JanelaErroTela.fxml"));
-				// Parent root1 = (Parent) fxmlLoader.load();
-				// JanelaErroController controller = fxmlLoader.getController();
-				// ((JanelaErroController) controller).setMessagem("Campos
-				// invalidos");
-				// ;
-				// Stage stage = new Stage();
-				// stage.initModality(Modality.APPLICATION_MODAL);
-				// stage.initStyle(StageStyle.UNDECORATED);
-				// stage.setTitle("Viper Sistemas");
-				// stage.setScene(new Scene(root1));
-				// stage.show();
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Error");
+				alert.setHeaderText("Informações inválidas");
+				alert.setContentText("Verifique os campos digitados!");
+				alert.showAndWait();
 
 			} else {
 				validate = true;
 			}
 		} catch (NumberFormatException e) {
-			e.getMessage();
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Error");
+			alert.setHeaderText("Informações inválidas");
+			alert.setContentText("Verifique os campos digitados!");
+			alert.showAndWait();
 
 		}
 		return validate;

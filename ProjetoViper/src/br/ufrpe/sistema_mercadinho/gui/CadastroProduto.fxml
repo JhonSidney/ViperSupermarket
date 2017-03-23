@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.sistema_mercadinho.gui.CadastroProdutoController">
+   <children>
+      <ImageView fitHeight="626.0" fitWidth="1038.0" layoutX="-21.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@picture/FUNDOMAIOR.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="74.0" layoutY="1.0" prefHeight="614.0" prefWidth="925.0">
+         <children>
+            <ImageView fitHeight="587.0" fitWidth="857.0" layoutX="-5.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@picture/fundoBranco.jpg" />
+               </image>
+            </ImageView>
+            <GridPane layoutX="11.0" layoutY="71.0" prefHeight="143.0" prefWidth="620.0">
+               <children>
+                  <Label alignment="BASELINE_LEFT" graphicTextGap="7.0" prefHeight="20.0" prefWidth="168.0" text="Codigo Produto">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BASELINE_LEFT" graphicTextGap="7.0" prefHeight="20.0" prefWidth="145.0" text="Nome do Produto" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BASELINE_LEFT" graphicTextGap="7.0" prefHeight="20.0" prefWidth="117.0" text="Quantidade" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BASELINE_LEFT" graphicTextGap="7.0" prefHeight="20.0" prefWidth="126.0" text="Descrição" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="CDFOR_NOMEFANTASIA" alignment="BASELINE_LEFT" GridPane.columnIndex="1" />
+                  <TextField fx:id="CDFOR_RAZAOSOCIAL" alignment="BASELINE_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="CDFOR_CNPJ" alignment="BASELINE_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="CDFOR_INSCRICAOESTADUAL" alignment="BASELINE_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="10.0" prefWidth="130.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="490.0" minWidth="10.0" prefWidth="490.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <Label layoutX="17.0" layoutY="1.0" prefHeight="25.0" prefWidth="274.0" text="CADASTRO FORNECEDOR">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <GridPane layoutX="11.0" layoutY="214.0" prefHeight="116.0" prefWidth="620.0">
+               <children>
+                  <Label alignment="BASELINE_LEFT" graphicTextGap="7.0" prefHeight="26.0" prefWidth="123.0" text="Preço de Custo">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BASELINE_LEFT" graphicTextGap="7.0" prefHeight="26.0" prefWidth="123.0" text="Preço de Venda" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BASELINE_LEFT" graphicTextGap="7.0" prefHeight="26.0" prefWidth="123.0" text="Peso do Produto" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="CDFOR_LOGRADOURO" alignment="BASELINE_LEFT" GridPane.columnIndex="1" />
+                  <TextField fx:id="CDFOR_BAIRRO" alignment="BASELINE_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="CDFOR_CEP" alignment="BASELINE_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="131.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="494.0" minWidth="10.0" prefWidth="489.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <Label layoutX="19.0" layoutY="13.0" prefHeight="25.0" prefWidth="206.0" text="VIPER SISTEMA">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Button layoutX="145.0" layoutY="557.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="95.0" text="CADASTRAR" />
+            <Button layoutX="274.0" layoutY="557.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="95.0" text="ALTERAR" />
+            <Button layoutX="406.0" layoutY="557.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="95.0" text="REMOVER" />
+            <Button layoutX="536.0" layoutY="557.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="95.0" text="BUSCAR" />
+            <Button layoutX="737.0" layoutY="557.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="95.0" text="CANCELAR" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

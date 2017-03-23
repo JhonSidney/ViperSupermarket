@@ -217,16 +217,16 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
             </GridPane>
-            <Button fx:id="CDF_CADASTRAR" layoutX="122.0" layoutY="554.0" mnemonicParsing="false" onAction="#cadastrarCadastroFuncionario" prefHeight="20.0" prefWidth="95.0" text="CADASTRAR" />
+            <Button fx:id="CDF_CADASTRAR" layoutX="122.0" layoutY="567.0" mnemonicParsing="false" onAction="#cadastrarCadastroFuncionario" prefHeight="20.0" prefWidth="95.0" text="CADASTRAR" />
             <Label layoutX="19.0" layoutY="13.0" prefHeight="25.0" prefWidth="206.0" text="VIPER SISTEMA">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
-            <Button fx:id="CDF_ALTERAR" layoutX="244.0" layoutY="554.0" mnemonicParsing="false" onAction="#alterarCadastroFuncionario" prefHeight="20.0" prefWidth="95.0" text="ALTERAR" />
-            <Button fx:id="CDF_REMOVER" layoutX="368.0" layoutY="554.0" mnemonicParsing="false" onAction="#removerCadastroFuncionario" prefHeight="20.0" prefWidth="95.0" text="REMOVER" />
+            <Button fx:id="CDF_ALTERAR" layoutX="244.0" layoutY="567.0" mnemonicParsing="false" onAction="#alterarCadastroFuncionario" prefHeight="20.0" prefWidth="95.0" text="ALTERAR" />
+            <Button fx:id="CDF_REMOVER" layoutX="368.0" layoutY="567.0" mnemonicParsing="false" onAction="#removerCadastroFuncionario" prefHeight="20.0" prefWidth="95.0" text="REMOVER" />
             <Button fx:id="CDF_CANCELAR" layoutX="722.0" layoutY="556.0" mnemonicParsing="false" onAction="#cancelarCadastroFuncionario" prefHeight="25.0" prefWidth="84.0" text="CANCELAR" />
-            <Button fx:id="CDF_BUSCAR" layoutX="497.0" layoutY="554.0" mnemonicParsing="false" onAction="#buscarCadastroFuncionario" prefHeight="20.0" prefWidth="95.0" text="BUSCAR" />
+            <Button fx:id="CDF_BUSCAR" layoutX="497.0" layoutY="567.0" mnemonicParsing="false" onAction="#buscarCadastroFuncionario" prefHeight="20.0" prefWidth="95.0" text="BUSCAR" />
          </children>
       </AnchorPane>
    </children>

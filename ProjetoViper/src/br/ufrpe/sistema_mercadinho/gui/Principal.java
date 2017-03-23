@@ -160,7 +160,7 @@ public class Principal extends Application {
 	public void frenteDeCaixa() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Principal.class.getResource("/br/ufrpe/sistema_mercadinho/gui/FrenteDeCaixaTela.fxml"));
+			loader.setLocation(Principal.class.getResource("/br/ufrpe/sistema_mercadinho/gui/FrenteDeCaixa.fxml"));
 			AnchorPane Login = (AnchorPane) loader.load();
 
 			rootLayout.setCenter(Login);

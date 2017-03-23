@@ -11,8 +11,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -78,7 +80,6 @@ public class CadastroFuncionarioController {
 	private Button CDF_CANCELAR;
 	@FXML
 	private Button CDF_BUSCAR;
-	
 
 	SistemaMercadinho fachada;
 
@@ -133,39 +134,36 @@ public class CadastroFuncionarioController {
 
 				stage = (Stage) CDF_CADASTRAR.getScene().getWindow();
 				root = FXMLLoader
-						.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroFuncionarioTela.fxml"));
+						.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroFuncionario.fxml"));
 
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
 
 			} catch (Exception e) {
-				e.printStackTrace();
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Error");
+				alert.setHeaderText("Informações inválidas");
+				alert.setContentText(e.getMessage());
+				alert.showAndWait();
 			}
 		}
 	}
 
-	
-	
 	@FXML
-	public void alterarCadastroFuncionario(ActionEvent event)throws IOException{
-		
-		
-		
+	public void alterarCadastroFuncionario(ActionEvent event) throws IOException {
+
 	}
-	
+
 	@FXML
-	public void removerCadastroFuncionario(ActionEvent event)throws IOException{
-		
-		
-		
+	public void removerCadastroFuncionario(ActionEvent event) throws IOException {
+
 	}
-	
+
 	@FXML
-	private void buscarCadastroFuncionario(ActionEvent event)throws IOException{
-		
+	private void buscarCadastroFuncionario(ActionEvent event) throws IOException {
+
 	}
-	
-	
+
 	@FXML
 	public void cancelarCadastroFuncionario(ActionEvent event) {
 		Parent root;
@@ -177,7 +175,7 @@ public class CadastroFuncionarioController {
 			} else {
 				stage = (Stage) CDF_CANCELAR.getScene().getWindow();
 				root = FXMLLoader
-						.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroFuncionarioTela.fxml"));
+						.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroFuncionario.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -187,14 +185,6 @@ public class CadastroFuncionarioController {
 		}
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
 	private boolean validarCampos() throws IOException {
 		boolean validate = false;
 		try {
@@ -209,25 +199,21 @@ public class CadastroFuncionarioController {
 					|| CDF_ESTADO.getText().isEmpty() || CDF_FUNCAO.getText().isEmpty()
 					|| CDF_ADMISSAO.getText().isEmpty() || CDF_DEMISSAO.getText().isEmpty()
 					|| CDF_SALARIO.getText().isEmpty()) {
-				
-//				FXMLLoader fxmlLoader = new FXMLLoader(
-//				getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/JanelaErroTela.fxml"));
-//				Parent root1 = (Parent) fxmlLoader.load();
-//				JanelaErroController controller = fxmlLoader.getController();
-//				((JanelaErroController) controller).setMessagem("Campos invalidos");
-//				;
-//				Stage stage = new Stage();
-//				stage.initModality(Modality.APPLICATION_MODAL);
-//				stage.initStyle(StageStyle.UNDECORATED);
-//				stage.setTitle("Viper Sistemas");
-//				stage.setScene(new Scene(root1));
-//				stage.show();
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Error");
+				alert.setHeaderText("Informações inválidas");
+				alert.setContentText("Verifique os campos digitados!");
+				alert.showAndWait();
 
 			} else {
 				validate = true;
 			}
 		} catch (NumberFormatException e) {
-			e.getMessage();
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Error");
+			alert.setHeaderText("Informações inválidas");
+			alert.setContentText("Verifique os campos digitados!");
+			alert.showAndWait();
 
 		}
 		return validate;
