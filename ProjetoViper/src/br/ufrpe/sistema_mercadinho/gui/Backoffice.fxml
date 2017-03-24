@@ -90,5 +90,6 @@
                </image>
             </ImageView>
          </graphic></Button>
+      <Button fx:id="BT_SAIR" layoutX="917.0" layoutY="106.0" mnemonicParsing="false" onAction="#sairLogin" prefHeight="25.0" prefWidth="70.0" text="SAIR" />
    </children>
 </AnchorPane>
