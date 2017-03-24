@@ -1,6 +1,7 @@
 package br.ufrpe.sistema_mercadinho.negocio.beans;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Venda implements Serializable{
 	private String codigoVenda;
@@ -10,11 +11,11 @@ public class Venda implements Serializable{
 	private double valorRecebido;
 	private double desconto;
 	private double troco;
-	private Item item;
+	private ArrayList<ItemVenda> itensDaVenda;
 
 	public Venda(String codigoVenda, Funcionario funcionario, String dataVenda,
 			double valorCompra, double valorRecebido, double desconto,
-			double troco, Item item) {
+			double troco, ArrayList<ItemVenda> item) {
 
 		this.setCodigoVenda(codigoVenda);
 		this.setFuncionario(funcionario);
@@ -82,12 +83,12 @@ public class Venda implements Serializable{
 		this.troco = troco;
 	}
 
-	public Item getItem() {
-		return item;
+	public ArrayList<ItemVenda> getItem() {
+		return this.itensDaVenda;
 	}
 
-	public void setItem(Item item) {
-		this.item = item;
+	public void setItem(ArrayList<ItemVenda> itens) {
+		this.itensDaVenda = itens;
 	}
 
 	public boolean equals(Object o) {
@@ -100,7 +101,7 @@ public class Venda implements Serializable{
 
 	public String toString() {
 		return "Vendas [codigoVenda=" + codigoVenda + ", funcionario="
-				+ funcionario + ", item=" + item + ", valorRecebido="
+				+ funcionario + ", item=" + itensDaVenda + ", valorRecebido="
 				+ valorRecebido + ", valorCompra=" + valorCompra
 				+ ", desconto=" + desconto + ", troco=" + troco
 				+ ", dataVenda=" + dataVenda + "]";

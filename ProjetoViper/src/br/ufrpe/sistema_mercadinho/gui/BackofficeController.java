@@ -24,24 +24,7 @@ public class BackofficeController {
 	private Button menuRelatorios;
 
 	
-//	@FXML
-//	private Button MIM_AlteracoesDePreco;
-//
-//	@FXML
-//	private Button MIM_ConsultarProdutos;
-//
-//	@FXML
-//	private Button MIM_Faturamento;
-//
-//	@FXML
-//	private Button MIM_MovimentacaoDeEstoque;
-//
-//	@FXML
-//	private Button MIM_PedidoDeCompra;
-//
-//	@FXML
-//	private Button MIM_PedidoDeVenda;
-//
+
 //	@FXML
 //	private Button MIP_FechamentoDeCaixa;
 //

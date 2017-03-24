@@ -93,11 +93,11 @@ public class TelaDeCadastroController {
 		Parent root;
 		Stage stage;
 		try {
-			if (event.getSource() == MBC_CadastrarFornecedor) {
-				stage = (Stage) MBC_CadastrarFornecedor.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroProdutoTela.fxml"));
+			if (event.getSource() == MBC_CadastrarProduto) {
+				stage = (Stage) MBC_CadastrarProduto.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroProduto.fxml"));
 			} else {
-				stage = (Stage) MBC_CadastrarFornecedor.getScene().getWindow();
+				stage = (Stage) MBC_CadastrarProduto.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaDeCadastro.fxml"));
 			}
 			Scene scene = new Scene(root);
