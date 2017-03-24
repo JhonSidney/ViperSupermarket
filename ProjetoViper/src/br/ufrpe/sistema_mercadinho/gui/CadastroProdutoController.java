@@ -116,6 +116,8 @@ public class CadastroProdutoController {
 
 	private boolean validarCampos() throws IOException {
 		boolean validate = false;
+		
+		
 		try {
 			if (CDPRO_CODIGOPRODUTO.getText().isEmpty() || CDPRO_NOMEPRODUTO.getText().isEmpty()
 					|| CDPRO_QUANTIDADE.getText().isEmpty() || CDPRO_DESCRICAO.getText().isEmpty()
