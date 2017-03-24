@@ -27,6 +27,9 @@ public class TelaMovimentacoesController {
 	@FXML
 	private Button MBM_PEDIDODEVENDA;
 	
+	@FXML
+	private Button BTM_VOLTAR;
+	
 	
 	SistemaMercadinho fachada;
 	
@@ -73,5 +76,14 @@ public class TelaMovimentacoesController {
 		
 		
 	}
+	
+	
+	@FXML
+	public void voltarMovimentacoes(ActionEvent event)throws IOException{
+		
+		
+		
+	}
+
 
 }

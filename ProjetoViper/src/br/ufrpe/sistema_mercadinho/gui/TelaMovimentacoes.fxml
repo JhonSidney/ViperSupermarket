@@ -7,7 +7,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.sistema_mercadinho.gui.TelaDeCadastroController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.sistema_mercadinho.gui.TelaMovimentacoesController">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="1000.0">
          <children>
@@ -16,33 +16,33 @@
                   <Image url="@picture/FUNDO%20-%20Cópia.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="MBC_CadastrarAdministrador" layoutX="293.0" layoutY="170.0" mnemonicParsing="false" onAction="#cadastrarAdministrador" prefHeight="51.0" prefWidth="414.0" text="ALTERAÇÕES DE PREÇO DE PRODUTO">
+            <Button fx:id="MBM_ALTERACOESDEPRECO" layoutX="293.0" layoutY="170.0" mnemonicParsing="false" onAction="#alteraracoesDePreco" prefHeight="51.0" prefWidth="414.0" text="ALTERAÇÕES DE PREÇO DE PRODUTO">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="MBC_VOLTAR" layoutX="891.0" layoutY="561.0" mnemonicParsing="false" onAction="#botaoVoltarMenuCadastrar" prefHeight="20.0" prefWidth="95.0" text="VOLTAR" />
-            <Button fx:id="MBC_CadastrarAdministrador1" layoutX="293.0" layoutY="243.0" mnemonicParsing="false" onAction="#cadastrarAdministrador" prefHeight="51.0" prefWidth="414.0" text="CONSULTAR PRODUTOS">
+            <Button fx:id="MBM_VOLTAR" layoutX="891.0" layoutY="561.0" mnemonicParsing="false" onAction="#voltarMovimentacoes" prefHeight="20.0" prefWidth="95.0" text="VOLTAR" />
+            <Button fx:id="MBM_CONSULTARPRODUTOS" layoutX="293.0" layoutY="243.0" mnemonicParsing="false" onAction="#consultarProdutos" prefHeight="51.0" prefWidth="414.0" text="CONSULTAR PRODUTOS">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="MBC_CadastrarAdministrador11" layoutX="292.0" layoutY="310.0" mnemonicParsing="false" onAction="#cadastrarAdministrador" prefHeight="51.0" prefWidth="414.0" text="FATURAMENTO">
+            <Button fx:id="MBM_FATURAMENTO" layoutX="292.0" layoutY="310.0" mnemonicParsing="false" onAction="#faturamento" prefHeight="51.0" prefWidth="414.0" text="FATURAMENTO">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="MBC_CadastrarAdministrador12" layoutX="293.0" layoutY="383.0" mnemonicParsing="false" onAction="#cadastrarAdministrador" prefHeight="51.0" prefWidth="414.0" text="MOVIMENTAÇÕES DE ESTOQUE">
+            <Button fx:id="MBM_MOVIMENTACOESDEESTOQUE" layoutX="293.0" layoutY="383.0" mnemonicParsing="false" onAction="#movimentacoesDeEstoque" prefHeight="51.0" prefWidth="414.0" text="MOVIMENTAÇÕES DE ESTOQUE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="MBC_CadastrarAdministrador121" layoutX="293.0" layoutY="448.0" mnemonicParsing="false" onAction="#cadastrarAdministrador" prefHeight="51.0" prefWidth="414.0" text="PEDIDO DE COMPRA ">
+            <Button fx:id="MBM_PEDIDODECOMPRA" layoutX="293.0" layoutY="448.0" mnemonicParsing="false" onAction="#pedidoCompra" prefHeight="51.0" prefWidth="414.0" text="PEDIDO DE COMPRA ">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="MBC_CadastrarAdministrador122" layoutX="293.0" layoutY="510.0" mnemonicParsing="false" onAction="#cadastrarAdministrador" prefHeight="51.0" prefWidth="414.0" text="PEDIDO DE VENDA">
+            <Button fx:id="MBM_PEDIDODEVENDA" layoutX="293.0" layoutY="510.0" mnemonicParsing="false" onAction="#pedidoVenda" prefHeight="51.0" prefWidth="414.0" text="PEDIDO DE VENDA">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>

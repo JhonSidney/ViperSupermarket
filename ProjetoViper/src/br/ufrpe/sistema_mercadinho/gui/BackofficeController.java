@@ -92,7 +92,7 @@ public class BackofficeController {
 		try {
 			if (event.getSource() == menuCadastro) {
 				stage = (Stage) menuCadastro.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministradorTela.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaMovimentacoes.fxml"));
 			} else {
 				stage = (Stage) menuCadastro.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/Backoffice.fxml"));
