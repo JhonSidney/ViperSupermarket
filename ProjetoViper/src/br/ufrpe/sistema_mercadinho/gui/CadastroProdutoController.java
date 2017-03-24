@@ -112,6 +112,23 @@ public class CadastroProdutoController {
 	@FXML
 	public void cancelarCadastroProduto(ActionEvent event) throws IOException {
 
+		Parent root;
+		Stage stage;
+		try {
+			if (event.getSource() == CDPRO_CANCELAR) {
+				stage = (Stage) CDPRO_CANCELAR.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaDeCadastro.fxml"));
+			} else {
+				stage = (Stage) CDPRO_CANCELAR.getScene().getWindow();
+				root = FXMLLoader
+						.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroFuncionario.fxml"));
+			}
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	private boolean validarCampos() throws IOException {

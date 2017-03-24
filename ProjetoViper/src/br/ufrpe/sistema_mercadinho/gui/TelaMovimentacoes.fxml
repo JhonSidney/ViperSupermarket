@@ -16,27 +16,37 @@
                   <Image url="@picture/FUNDO%20-%20Cópia.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="MBC_CadastrarAdministrador" layoutX="234.0" layoutY="171.0" mnemonicParsing="false" onAction="#cadastrarAdministrador" prefHeight="160.0" prefWidth="260.0" text="ADMINISTRADOR">
+            <Button fx:id="MBC_CadastrarAdministrador" layoutX="293.0" layoutY="170.0" mnemonicParsing="false" onAction="#cadastrarAdministrador" prefHeight="51.0" prefWidth="414.0" text="ALTERAÇÕES DE PREÇO DE PRODUTO">
                <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Button>
-            <Button fx:id="MBC_CadastrarFuncionario" layoutX="516.0" layoutY="171.0" mnemonicParsing="false" onAction="#cadastrarFuncionario" prefHeight="160.0" prefWidth="260.0" text="FUNCIONARIO">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Button>
-            <Button fx:id="MBC_CadastrarFornecedor" layoutX="234.0" layoutY="357.0" mnemonicParsing="false" onAction="#cadastrarFornecedor" prefHeight="160.0" prefWidth="260.0" text="FORNECEDOR">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Button>
-            <Button fx:id="MBC_CadastrarProduto" layoutX="516.0" layoutY="357.0" mnemonicParsing="false" onAction="#cadastrarProduto" prefHeight="160.0" prefWidth="260.0" text="PRODUTO">
-               <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Button>
             <Button fx:id="MBC_VOLTAR" layoutX="891.0" layoutY="561.0" mnemonicParsing="false" onAction="#botaoVoltarMenuCadastrar" prefHeight="20.0" prefWidth="95.0" text="VOLTAR" />
+            <Button fx:id="MBC_CadastrarAdministrador1" layoutX="293.0" layoutY="243.0" mnemonicParsing="false" onAction="#cadastrarAdministrador" prefHeight="51.0" prefWidth="414.0" text="CONSULTAR PRODUTOS">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="MBC_CadastrarAdministrador11" layoutX="292.0" layoutY="310.0" mnemonicParsing="false" onAction="#cadastrarAdministrador" prefHeight="51.0" prefWidth="414.0" text="FATURAMENTO">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="MBC_CadastrarAdministrador12" layoutX="293.0" layoutY="383.0" mnemonicParsing="false" onAction="#cadastrarAdministrador" prefHeight="51.0" prefWidth="414.0" text="MOVIMENTAÇÕES DE ESTOQUE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="MBC_CadastrarAdministrador121" layoutX="293.0" layoutY="448.0" mnemonicParsing="false" onAction="#cadastrarAdministrador" prefHeight="51.0" prefWidth="414.0" text="PEDIDO DE COMPRA ">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="MBC_CadastrarAdministrador122" layoutX="293.0" layoutY="510.0" mnemonicParsing="false" onAction="#cadastrarAdministrador" prefHeight="51.0" prefWidth="414.0" text="PEDIDO DE VENDA">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
