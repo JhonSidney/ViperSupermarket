@@ -34,7 +34,7 @@ public class TelaDeCadastroController {
 			
 			if (event.getSource() == MBC_CadastrarAdministrador) {
 				stage = (Stage) MBC_CadastrarAdministrador.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministradorTela.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroAdministrador.fxml"));
 			} else {
 				stage = (Stage) MBC_CadastrarAdministrador.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaDeCadastro.fxml"));
@@ -55,7 +55,7 @@ public class TelaDeCadastroController {
 		try {
 			if (event.getSource() == MBC_CadastrarFuncionario) {
 				stage = (Stage) MBC_CadastrarFuncionario.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroFuncionarioTela.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroFuncionario.fxml"));
 			} else {
 				stage = (Stage) MBC_CadastrarFuncionario.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaDeCadastro.fxml"));
@@ -75,7 +75,7 @@ public class TelaDeCadastroController {
 		try {
 			if (event.getSource() == MBC_CadastrarFornecedor) {
 				stage = (Stage) MBC_CadastrarFornecedor.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroFornecedorTela.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/CadastroFornecedor.fxml"));
 			} else {
 				stage = (Stage) MBC_CadastrarFornecedor.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/br/ufrpe/sistema_mercadinho/gui/TelaDeCadastro.fxml"));
